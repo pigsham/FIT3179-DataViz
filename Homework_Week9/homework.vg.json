@@ -5,8 +5,8 @@
     "fontSize": 20,
     "anchor": "middle"
   },
-  "width": 2160,
-  "height": 1000,
+  "width": 1600,
+  "height": 960,
   "projection": {
     "type": "equirectangular"
   },
