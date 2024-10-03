@@ -121,31 +121,13 @@
     {
       "data": {
         "values": [
-          {"Year": "2019-01-01"}
-        ]
-      },
-      "mark": {
-        "type": "rule",
-        "color": "pink",
-        "strokeWidth": 2
-      },
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "temporal"
-        }
-      }
-    },
-    {
-      "data": {
-        "values": [
           {"Year": "2019-01-01", "Annotation": "COVID-19 pandemic leads to sharp "}
         ]
       },
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 5,
+        "dx": 55,
         "dy": -5,
         "fontSize": 12,
         "fontStyle": "italic",
@@ -174,7 +156,7 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 5,
+        "dx": 55,
         "dy": 10,
         "fontSize": 12,
         "fontStyle": "italic",
