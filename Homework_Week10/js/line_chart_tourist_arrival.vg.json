@@ -1,102 +1,122 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
-    "height": 400,
-    "title": "International Tourist Arrivals by Region",
-    "data": {
-      "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/Homework_Week10/data/international_tourist_arrival_by_region.csv"
-    },
-    "layer": [
-      {
-        "selection": {
-          "region_highlight": {
-            "type": "multi",
-            "fields": ["Region"],
-            "bind": "legend"
-          }
-        },
-        "mark": "line",
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "temporal",
-            "title": "Year"
-          },
-          "y": {
-            "field": "International Tourists Arrival",
-            "type": "quantitative",
-            "title": "Number of Tourist Arrivals",
-            "axis": {
-              "title": "Number of Tourist Arrivals (Millions)"
-            }
-          },
-          "color": {
-            "field": "Region",
-            "type": "nominal",
-            "title": "Region",
-            "scale": {
-              "domain": [
-                "Africa",
-                "Americas",
-                "East Asia and the Pacific",
-                "Europe",
-                "Middle East",
-                "South Asia"
-              ],
-              "range": [
-                "#e41a1c",
-                "#984ea3",
-                "#ff7f00",
-                "#a6cee3",
-                "#377eb8",
-                "#a65628"
-              ]
-            },
-            "legend": {
-              "symbolType": "stroke"
-            }
-          },
-          "opacity": {
-            "condition": {
-              "selection": "region_highlight", 
-              "value": 1
-            },
-            "value": 0.2
-          }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 400,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "title": "International Tourist Arrivals by Region",
+  "data": {
+    "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/Homework_Week10/data/international_tourist_arrival_by_region.csv"
+  },
+  "layer": [
+    {
+      "selection": {
+        "region_highlight": {
+          "type": "multi",
+          "fields": ["Region"],
+          "bind": "legend"
         }
       },
-      {
-        "mark": {
-          "type": "point",
-          "filled": true,
-          "size": 50
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "title": "Year",
+          "timeUnit": "year", 
+          "axis": {
+            "format": "%Y",  
+            "tickCount": "year",  
+            "labelOverlap": "parity"  
+          }
         },
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "temporal"
+        "y": {
+          "field": "International Tourists Arrival",
+          "type": "quantitative",
+          "title": "Number of Tourist Arrivals",
+          "axis": {
+            "title": "Number of Tourist Arrivals (Millions)"
+          }
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "title": "Region",
+          "scale": {
+            "domain": [
+              "Africa",
+              "Americas",
+              "East Asia and the Pacific",
+              "Europe",
+              "Middle East",
+              "South Asia"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "#377eb8",
+              "#a65628"
+            ]
           },
-          "y": {
-            "field": "International Tourists Arrival",
-            "type": "quantitative"
+          "legend": {
+            "orient": "top-right",
+            "legendX": 300,
+            "legendY": -50,
+            "symbolType": "stroke",
+            "fillColor": "white",
+            "strokeColor": "black",
+            "padding": 10
+          }
+        },
+        "opacity": {
+          "condition": {
+            "selection": "region_highlight", 
+            "value": 1
           },
-          "color": {
-            "field": "Region",
-            "type": "nominal"
-          },
-          "opacity": {
-            "condition": {
-              "selection": "region_highlight", 
-              "value": 1
-            },
-            "value": 0.2
-          },
-          "tooltip": [
-            {"field": "Year", "type": "temporal", "title": "Year", "timeUnit": "year"},
-            {"field": "International Tourists Arrival", "type": "quantitative", "title": "Tourist Arrivals", "format": ","},
-            {"field": "Region", "type": "nominal", "title": "Region"}
-          ]
+          "value": 0.2
         }
       }
-    ]
-  }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 50
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year", 
+          "axis": {
+            "format": "%Y"
+          }
+        },
+        "y": {
+          "field": "International Tourists Arrival",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "selection": "region_highlight", 
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Year", "type": "temporal", "title": "Year", "timeUnit": "year"},
+          {"field": "International Tourists Arrival", "type": "quantitative", "title": "Tourist Arrivals", "format": ","},
+          {"field": "Region", "type": "nominal", "title": "Region"}
+        ]
+      }
+    }
+  ]
+}

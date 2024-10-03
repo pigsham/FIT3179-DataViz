@@ -6,7 +6,7 @@
       "anchor": "middle"
     },
     "width": "container",
-    "height": 960,
+    "height": 500,
     "projection": {
       "type": "equirectangular"
     },
@@ -33,7 +33,7 @@
       },
       {
         "data": {
-          "url": "ne_110m.json",
+          "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/Homework_Week10/js/ne_110m.json",
           "format": {
             "type": "topojson",
             "feature": "ne_110m_admin_0_countries"
@@ -44,7 +44,7 @@
             "lookup": "properties.ISO_A3_EH",
             "from": {
               "data": {
-                "url": "tourism_revenue.csv",
+                "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/Homework_Week10/data/tourism_revenue.csv",
                 "format": {"type": "csv"}
               },
               "key": "Country_Code",

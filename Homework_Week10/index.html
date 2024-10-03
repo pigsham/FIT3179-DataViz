@@ -25,27 +25,41 @@
 <body>
 
   <div class="page">
-    <!-- pure grid group -->
+    <!-- pure grid group for the first visualization -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1>Tourism Dashboard</h1>
       </div>
     </div>
-    <!-- end pure grid group -->
 
-    <!-- Visualization -->
+    <!-- Container for revenueSpec visualization -->
     <div class="pure-g">
       <div class="pure-u-1-1">
+        <h2>Average Tourism Revenue by Countries</h2>
+        <div id="vis2" class="vis-container"></div>
+      </div>
+    </div>
+    
+    <!-- Container for touristSpec visualization -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>International Tourist Arrivals by Region</h2>
         <div id="vis1" class="vis-container"></div>
       </div>
     </div>
-    <!-- end pure grid group -->
 
   </div> <!-- end page -->
 
   <script type="text/javascript">
     var touristSpec = "js/line_chart_tourist_arrival.vg.json";
+    var revenueSpec = "js/choropleth_map_revenue.vg.json";
 
+    // Embed the revenue visualization first
+    vegaEmbed('#vis2', revenueSpec, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    // Embed the tourist arrivals visualization
     vegaEmbed('#vis1', touristSpec, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
