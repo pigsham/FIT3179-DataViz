@@ -1,0 +1,20 @@
+/* Ensure the visualization container is responsive */
+.vis-container {
+    width: 100%;
+    height: auto;
+    min-height: 400px; /* Adjust the minimum height if needed */
+  }
+  
+  /* Optional: make the page content responsive */
+  .page {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Center the title */
+  h1 {
+    text-align: center; /* Center the title */
+    font-family: 'Open Sans', sans-serif; /* Use Google font */
+    margin: 20px 0; /* Add margin for spacing */
+  }
