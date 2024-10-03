@@ -25,11 +25,10 @@
           "field": "Year",
           "type": "temporal",
           "title": "Year",
-          "timeUnit": "year", 
           "axis": {
-            "format": "%Y",  
-            "tickCount": "year",  
-            "labelOverlap": "parity"  
+            "format": "%Y",
+            "tickCount": "year",
+            "labelOverlap": "parity"
           }
         },
         "y": {
@@ -61,20 +60,11 @@
               "#377eb8",
               "#a65628"
             ]
-          },
-          "legend": {
-            "orient": "top-right",
-            "legendX": 300,
-            "legendY": -50,
-            "symbolType": "stroke",
-            "fillColor": "white",
-            "strokeColor": "black",
-            "padding": 10
           }
         },
         "opacity": {
           "condition": {
-            "selection": "region_highlight", 
+            "selection": "region_highlight",
             "value": 1
           },
           "value": 0.2
@@ -90,11 +80,7 @@
       "encoding": {
         "x": {
           "field": "Year",
-          "type": "temporal",
-          "timeUnit": "year", 
-          "axis": {
-            "format": "%Y"
-          }
+          "type": "temporal"
         },
         "y": {
           "field": "International Tourists Arrival",
@@ -106,16 +92,106 @@
         },
         "opacity": {
           "condition": {
-            "selection": "region_highlight", 
+            "selection": "region_highlight",
             "value": 1
           },
           "value": 0.2
         },
         "tooltip": [
-          {"field": "Year", "type": "temporal", "title": "Year", "timeUnit": "year"},
-          {"field": "International Tourists Arrival", "type": "quantitative", "title": "Tourist Arrivals", "format": ","},
-          {"field": "Region", "type": "nominal", "title": "Region"}
+          {
+            "field": "Year",
+            "type": "temporal",
+            "title": "Year",
+            "timeUnit": "year"
+          },
+          {
+            "field": "International Tourists Arrival",
+            "type": "quantitative",
+            "title": "Tourist Arrivals",
+            "format": ","
+          },
+          {
+            "field": "Region",
+            "type": "nominal",
+            "title": "Region"
+          }
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Year": "2019-01-01"}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "pink",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Year": "2019-01-01", "Annotation": "COVID-19 pandemic leads to sharp "}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -5,
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "color": "red"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "datum": 700000000,
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Annotation"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Year": "2019-01-01", "Annotation": "drop in tourism arrivals in every region"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": 10,
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "color": "red"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "datum": 700000000,
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Annotation"
+        }
       }
     }
   ]
