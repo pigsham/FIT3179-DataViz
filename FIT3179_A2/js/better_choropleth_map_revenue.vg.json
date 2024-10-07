@@ -3,6 +3,18 @@
     "title": "COVID-19 Active Cases (10 Oct 2020)",
     "width": 800,
     "height": 400,
+    "params": [
+        {
+        "name": "Year_selection",
+        "value": 2014,
+        "bind": {
+        "input": "range",
+        "min": 2010,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+        }
+    }],
     "projection": {"type": "equalEarth"},
     "data": {
       "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/js/ne_110m.json",
@@ -13,16 +25,17 @@
         "lookup": "properties.ISO_A3_EH",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/cleaned_tourism_revenue.csv"
+            "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/tourism_revenue_by_year.csv"
           },
           "key": "Country_Code",
-          "fields": ["Avg_Revenue", "Land_Area"]
+          "fields": ["Revenue", "Land_Area", "Year"]
         }
       },
       {
-        "calculate": "datum.Avg_Revenue / datum.Land_Area + 0.1",
+        "calculate": "datum.Revenue / datum.Land_Area + 0.1",
         "as": "Revenue_per_km2"
-      }
+      },
+      {"filter": "datum.Year == Year_selection"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
