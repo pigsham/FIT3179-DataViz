@@ -19,7 +19,7 @@
           "fields": ["Active"]
         }
       },
-      {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+      {"calculate": "datum.Active + 1", "as": "Active Cases"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {

@@ -5,7 +5,7 @@
       "fontSize": 20,
       "anchor": "middle"
     },
-    "width": "container",
+    "width": 800,
     "height": 500,
     "projection": {
       "type": "equirectangular"

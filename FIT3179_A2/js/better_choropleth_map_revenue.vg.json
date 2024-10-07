@@ -15,22 +15,25 @@
           "data": {
             "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/cleaned_tourism_revenue.csv"
           },
-          "key": "Country",
-          "fields": ["Active"]
+          "key": "Country_Code",
+          "fields": ["Avg_Revenue", "Land_Area"]
         }
       },
-      {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+      {
+        "calculate": "datum.Avg_Revenue / datum.Land_Area + 0.1",
+        "as": "Revenue_per_km2"
+      }
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
       "color": {
-        "field": "Active Cases",
+        "field": "Revenue_per_km2",
         "type": "quantitative",
         "scale": {"type": "log"}
       },
       "tooltip": [
         {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "Active", "type": "quantitative"}
+        {"field": "Revenue_per_km2", "type": "quantitative"}
       ]
     }
   }
