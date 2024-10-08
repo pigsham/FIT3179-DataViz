@@ -7,7 +7,7 @@
     "data": [
       {
         "name": "table",
-        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/word_cloud_data.csv",
+        "url": "Dataset/googletrend.csv",
         "format": {"type": "csv"}
       }
     ],
@@ -15,13 +15,13 @@
       { 
         "name": "size",
         "type": "linear",
-        "domain": {"data": "table", "field": "Search Volume"},
+        "domain": {"data": "table", "field": "Ratio"},
         "range": [10, 100]
       },
       {
         "name": "color",
         "type": "linear",
-        "domain": {"data": "table", "field": "Search Volume"},
+        "domain": {"data": "table", "field": "Ratio"},
         "range": ["#d3e5ff", "#08306b"]
       }
     ],
@@ -31,10 +31,10 @@
         "from": {"data": "table"},
         "encode": {
           "enter": {
-            "text": {"field": "Keywords"},
-            "fill": {"scale": "color", "field": "Saeach Volume"},
+            "text": {"field": "Topics"},
+            "fill": {"scale": "color", "field": "Ratio"},
             "font": {"value": "Helvetica Neue, Arial"},
-            "fontSize": {"scale": "size", "field": "Search Volume"},
+            "fontSize": {"scale": "size", "field": "Ratio"},
             "align": {"value": "center"},
             "baseline": {"value": "middle"}
           }
