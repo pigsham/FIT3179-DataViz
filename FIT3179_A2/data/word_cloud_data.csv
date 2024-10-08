@@ -1,26 +1,26 @@
-﻿Topics,Ratio
-hotels,24900000
-flights,4090000
-travelocity,3350000
-airline tickets,550000
-vacation,450000
-trip,450000
-plane tickets,368000
-travel agency,301000
-airlines,301000
-cheap airline tickets,346000
-airface,201000
-fare,201000
-cheap airfare,165000
-destination,165000
-one travel,165000
-package,135000
-vacation packages,110000
-cheap plane tickets,110000
-www expedia com,90500
-travel channel,90500
-cheap airlines,74000
-travel news,74000
-budget travel,60500
-last minute travel,60500
-travel sites ,49500
+﻿Topic,Search Volume,Ratio
+hotels,24900000,1
+flights,4090000,0.164257028
+travelocity,3350000,0.134538153
+airline tickets,550000,0.022088353
+vacation,450000,0.018072289
+trip,450000,0.018072289
+plane tickets,368000,0.014779116
+travel agency,301000,0.012088353
+airlines,301000,0.012088353
+cheap airline tickets,346000,0.013895582
+airface,201000,0.008072289
+fare,201000,0.008072289
+cheap airfare,165000,0.006626506
+destination,165000,0.006626506
+one travel,165000,0.006626506
+package,135000,0.005421687
+vacation packages,110000,0.004417671
+cheap plane tickets,110000,0.004417671
+www expedia com,90500,0.003634538
+travel channel,90500,0.003634538
+cheap airlines,74000,0.002971888
+travel news,74000,0.002971888
+budget travel,60500,0.002429719
+last minute travel,60500,0.002429719
+travel sites ,49500,0.001987952
