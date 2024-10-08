@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "width": 1000,
+    "height": 800,
+    "padding": 0,
+    "autosize": "none",
+    "data": [
+      {
+        "name": "table",
+        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/word_cloud_data.csv",
+        "format": {"type": "csv"}
+      }
+    ],
+    "scales": [
+      { 
+        "name": "size",
+        "type": "linear",
+        "domain": {"data": "table", "field": "Search Volume"},
+        "range": [10, 100]
+      },
+      {
+        "name": "color",
+        "type": "linear",
+        "domain": {"data": "table", "field": "Search Volume"},
+        "range": ["#d3e5ff", "#08306b"]
+      }
+    ],
+    "marks": [
+      {
+        "type": "text",
+        "from": {"data": "table"},
+        "encode": {
+          "enter": {
+            "text": {"field": "Keywords"},
+            "fill": {"scale": "color", "field": "Saeach Volume"},
+            "font": {"value": "Helvetica Neue, Arial"},
+            "fontSize": {"scale": "size", "field": "Search Volume"},
+            "align": {"value": "center"},
+            "baseline": {"value": "middle"}
+          }
+        },
+        "transform": [
+          {
+            "type": "force",
+            "iterations": 500,
+            "forces": [
+              {"force": "center", "x": {"signal": "width / 2"}, "y": {"signal": "height / 2"}},
+              {"force": "nbody", "strength": -30}
+            ]
+          }
+        ]
+      }
+    ]
+  }
