@@ -7,7 +7,7 @@
     "data": [
       {
         "name": "table",
-        "url": "https://github.com/pigsham/FIT3179-DataViz/blob/main/FIT3179_A2/data/word_cloud_data.csv",
+        "url": "Dataset/googletrend.csv",
         "format": {"type": "csv"}
       }
     ],
@@ -52,3 +52,4 @@
       }
     ]
   }
+  

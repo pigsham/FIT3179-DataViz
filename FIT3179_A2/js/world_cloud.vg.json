@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A word cloud based on key phrases from the article on travel and mental health.",
+  "width": 800,
+  "height": 400,
+  "padding": 0,
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"text": "Travel", "size": 80},
+        {"text": "Mental_health", "size": 70},
+        {"text": "Stress_relief", "size": 50},
+        {"text": "Personal_growth", "size": 65},
+        {"text": "Creativity", "size": 55},
+        {"text": "Reduce_anxiety", "size": 40},
+        {"text": "Well-being", "size": 60},
+        {"text": "Resilience", "size": 45},
+        {"text": "Social_connections", "size": 70},
+        {"text": "Self-confidence", "size": 75},
+        {"text": "Healing_through_travel", "size": 55},
+        {"text": "Cognitive_flexibility", "size": 50},
+        {"text": "New_experiences", "size": 60},
+        {"text": "Boosting_mental_health", "size": 45},
+        {"text": "Embrace_change", "size": 50},
+        {"text": "Remote_work_and_travel", "size": 60},
+        {"text": "Nature's_healing", "size": 55},
+        {"text": "Work-life_balance", "size": 65},
+        {"text": "Challenging_yourself", "size": 50},
+        {"text": "Explore_destinations", "size": 60},
+        {"text": "Adventure", "size": 70},
+        {"text": "Problem-solving", "size": 55},
+        {"text": "Enhance_creativity", "size": 50},
+        {"text": "Break_routines", "size": 45},
+        {"text": "Recharge", "size": 60},
+        {"text": "Build_confidence", "size": 65},
+        {"text": "Personal_well-being", "size": 55},
+        {"text": "Happiness", "size": 70},
+        {"text": "Mindfulness", "size": 50},
+        {"text": "Positive_thinking", "size": 60},
+        {"text": "Emotional_well-being", "size": 55},
+        {"text": "Mental_clarity", "size": 50},
+        {"text": "Inner_peace", "size": 60},
+        {"text": "Joyful_living", "size": 65},
+        {"text": "Life_satisfaction", "size": 70}
+      ],
+      "transform": [
+        {
+          "type": "formula",
+          "as": "text",
+          "expr": "replace(datum.text, '_', ' ')"
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "text"},
+      "range": ["#d5a928", "#652c90", "#939597"]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "text",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "text": {"field": "text"},
+          "align": {"value": "center"},
+          "baseline": {"value": "alphabetic"},
+          "fill": {"scale": "color", "field": "text"}
+        },
+        "update": {
+          "fillOpacity": {"value": 1}
+        },
+        "hover": {
+          "fillOpacity": {"value": 0.5}
+        }
+      },
+      "transform": [
+        {
+          "type": "wordcloud",
+          "size": [800, 400],
+          "text": {"field": "text"},
+          "rotate": {"field": "datum.angle"},
+          "font": "Helvetica Neue, Arial",
+          "fontSize": {"field": "size"},  
+          "fontSizeRange": [20, 80],
+          "padding": 2
+        }
+      ]
+    }
+  ]
+}
