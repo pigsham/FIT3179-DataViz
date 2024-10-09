@@ -27,7 +27,7 @@
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1>Global Travel & Tourism: Data-Driven Insights and Trends</h1>
-        <p>This page demonstrates how you can use pure.css grid for your layout.</p>
+        <p>Explanation</p>
       </div>
     </div>
 
@@ -61,14 +61,14 @@
     <!-- Two-column explanation using PureCSS grid -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <p><strong>Highest Tourist Arrivals:</strong> The region with the highest tourist arrivals is <span class="africa">Africa</span>, showing consistent growth over the years. By contrast, <span class="south-asia">South Asia</span> has seen the lowest tourist arrivals compared to other regions.</p>
+        <p>The region with the highest tourist arrivals is <span class="africa">Africa</span>, showing consistent growth over the years. By contrast, <span class="south-asia">South Asia</span> has seen the lowest tourist arrivals compared to other regions.</p>
       </div>
       <div class="pure-u-1-2">
-        <p><strong>Significant Decline in 2020:</strong> Tourist arrivals dropped sharply across all regions in 2020 due to the COVID-19 pandemic. This is particularly evident in <span class="africa">Africa</span>, <span class="americas">Americas</span>, <span class="east-asia">East Asia</span>, and <span class="europe">Europe</span>.</p>
+        <p>Tourist arrivals dropped sharply across all regions in 2020 due to the COVID-19 pandemic. This is particularly evident in <span class="africa">Africa</span>, <span class="americas">Americas</span>, <span class="east-asia">East Asia</span>, and <span class="europe">Europe</span>.</p>
       </div>
     </div>
 
-    <h2>Travel Benefits Word Cloud</h2>
+    <h2>Travel Benefits</h2>
     <!-- Word Cloud Visualization and Travel Benefits Explanation -->
     <div class="pure-g">
       <!-- Two-thirds column for the word cloud -->
@@ -87,6 +87,53 @@
         </div>
       </div>
 
+    <!-- Fourth Visualization -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>Travel Budget Plan Suggestions</h2>
+        <div class="vis-container-shadow">
+          <div id="vis4" class="vis-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <!-- Self Category Column -->
+      <div class="pure-u-1-3"">
+        <h2 class="self-category">Self Trip</h2>
+        <p>For solo travelers, most of the budget goes to accommodation and transportation for comfort and mobility. Entertainment and activities are prioritized for exploration, while dining and shopping take a smaller share, reflecting modest personal spending.</p>
+      </div>
+    
+      <!-- Business Category Column -->
+      <div class="pure-u-1-3"> <!-- Adding larger horizontal padding -->
+        <h2 class="business-category">Business Trip</h2>
+        <p>Business trips focus on transportation and accommodation, with companies usually covering these costs. Food and entertainment are secondary, but some budget is allocated for business-related shopping or souvenirs.</p>
+      </div>
+    
+      <!-- Family Category Column -->
+      <div class="pure-u-1-3">
+        <h2 class="family-category">Family Trip</h2>
+        <p>Family trips prioritize accommodation and transportation for comfort. Food and dining are key for shared meals, while entertainment and shopping, mostly for souvenirs, have smaller budgets.</p>
+      </div>
+    </div>
+
+    <!-- Fifth Visualization -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>Famous Accomdation Apps</h2>
+        <div class="vis-container-shadow">
+          <div id="vis5" class="vis-container"></div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Explanation text -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p class="explanation">Explanatio.</p>
+      </div>
+    </div>
+
 
   </div>
 
@@ -94,6 +141,8 @@
     var vis1 = "js/1_better_choropleth_map_revenue.vg.json";
     var vis2 = "js/4_stacked_area_chart_tourist_arrival.vg.json";
     var vis3 = "js/2_word_cloud_travel_benefit.vg.json";
+    var vis4 = "js/3_sankey_diagram_travel_budget.vg.json"
+    var vis5 = "js/5_grouped_bar_chart.vg.json"
 
     // Embed the first visualization
     vegaEmbed('#vis1', vis1, { "actions": false }).then(function (result) {
@@ -107,6 +156,16 @@
 
     // Embed the word cloud visualization
     vegaEmbed('#vis3', vis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+
+    // Embed the word cloud visualization
+    vegaEmbed('#vis4', vis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+
+    // Embed the word cloud visualization
+    vegaEmbed('#vis5', vis5, { "actions": false }).then(function (result) {
       // Access the Vega view instance as result.view
     }).catch(console.error);
   </script>

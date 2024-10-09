@@ -88,3 +88,19 @@ h1 {
   color: #b5cf6b;
   font-weight: 900;
 }
+
+.business-category {
+  color: #f28e2b; /* Orange for Business */
+  font-weight: bold;
+}
+
+.family-category {
+  color: #76b7b2; /* Green for Family */
+  font-weight: bold;
+}
+
+.self-category {
+  color: #4e79a7; /* Blue for Self */
+  font-weight: bold;
+}
+
