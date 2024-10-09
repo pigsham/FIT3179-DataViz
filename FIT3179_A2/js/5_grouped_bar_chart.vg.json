@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A horizontal grouped bar chart example.",
+  "data": {
+    "values": [
+      {"App": "Booking", "Year": 2019, "Revenue": 15},
+      {"App": "Booking", "Year": 2020, "Revenue": 6.8},
+      {"App": "Booking", "Year": 2021, "Revenue": 10.9},
+      {"App": "Booking", "Year": 2022, "Revenue": 17},
+      {"App": "Booking", "Year": 2023, "Revenue": 21.3},
+      {"App": "Expedia", "Year": 2019, "Revenue": 12},
+      {"App": "Expedia", "Year": 2020, "Revenue": 5.1},
+      {"App": "Expedia", "Year": 2021, "Revenue": 8.5},
+      {"App": "Expedia", "Year": 2022, "Revenue": 11.6},
+      {"App": "Expedia", "Year": 2023, "Revenue": 12.3},
+      {"App": "Airbnb", "Year": 2019, "Revenue": 4.7},
+      {"App": "Airbnb", "Year": 2020, "Revenue": 3.4},
+      {"App": "Airbnb", "Year": 2021, "Revenue": 5.9},
+      {"App": "Airbnb", "Year": 2022, "Revenue": 8.3},
+      {"App": "Airbnb", "Year": 2023, "Revenue": 9.9},
+      {"App": "Trip.com", "Year": 2019, "Revenue": 5.1},
+      {"App": "Trip.com", "Year": 2020, "Revenue": 2.8},
+      {"App": "Trip.com", "Year": 2021, "Revenue": 3.1},
+      {"App": "Trip.com", "Year": 2022, "Revenue": 2.9},
+      {"App": "Trip.com", "Year": 2023, "Revenue": 6.3},
+      {"App": "TripAdvisor", "Year": 2019, "Revenue": 1.5},
+      {"App": "TripAdvisor", "Year": 2020, "Revenue": 0.6},
+      {"App": "TripAdvisor", "Year": 2021, "Revenue": 0.9},
+      {"App": "TripAdvisor", "Year": 2022, "Revenue": 1.4},
+      {"App": "TripAdvisor", "Year": 2023, "Revenue": 1.7}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Revenue",
+      "type": "quantitative",
+      "title": "Revenue (in Billion USD)",
+      "axis": {
+        "tickCount": 10,  
+        "format": "s"
+      }
+    },
+    "x": {
+      "field": "App",
+      "type": "nominal",
+      "title": "Traveling App"
+    },
+    "color": {
+      "field": "Year",
+      "type": "nominal",
+      "legend": {"title": "Year"}
+    },
+    "xOffset": {"field": "Year"}
+  },
+  "config": {
+    "bar": {
+      "binSpacing": 5
+    }
+  }
+}
