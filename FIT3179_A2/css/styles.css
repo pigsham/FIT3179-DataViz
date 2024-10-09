@@ -26,19 +26,25 @@ body {
 
 .vis-container {
   width: 100%;
+  max-width: 100%;  /* Ensures that the chart doesn't exceed the container width */
+  overflow: hidden; /* Hides any overflow if there is extra space */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.vis-container-shadow {
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.3);  /* More balanced shadow */
+  padding: 10px;  /* Add padding inside the shadow */
+  background-color: white;  /* Ensure white background for the visualization */
+}
+
+.explanation {
+  margin-top: 10px; /* Adding more spacing between the chart and explanation */
+  padding-top: 0; /* Ensure there's no padding on the top */
 }
 
 .description h2,
 h1 {
   margin-top: 0px;
-}
-
-.description-right {
-  padding-left: 20px;
-}
-
-.description-left {
-  padding-right: 20px;
 }
 
 .pure-g {
@@ -47,4 +53,39 @@ h1 {
 
 .small-font {
   font-size: 14px;
+}
+
+.africa {
+  color: #393b79; /* Africa color */
+  font-weight: 900; /* Stronger bold */
+}
+
+.americas {
+  color: #5254a3; /* Americas color */
+  font-weight: 900; /* Stronger bold */
+}
+
+.east-asia {
+  color: #6b6ecf; /* East Asia and the Pacific color */
+  font-weight: 900; /* Stronger bold */
+}
+
+.europe {
+  color: #9c9ede; /* Europe color */
+  font-weight: 900; /* Stronger bold */
+}
+
+.middle-east {
+  color: #637939; /* Middle East color */
+  font-weight: 900; /* Stronger bold */
+}
+
+.other {
+  color: #8ca252; /* Other color */
+  font-weight: 900; /* Stronger bold */
+}
+
+.south-asia {
+  color: #b5cf6b; /* South Asia color */
+  font-weight: 900; /* Stronger bold */
 }
