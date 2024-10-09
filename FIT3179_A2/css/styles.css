@@ -1,17 +1,23 @@
-body *{
+body * {
   font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
   font-weight: 900;
+  font-family: 'Berkshire Swash', cursive; 
+}
+
+h2 {
+  font-family: 'Rozha One', serif; 
+  font-size: 24px;  
 }
 
 body {
-  background-color: lightgray;
+  background-color: beige;
 }
 
 .page {
-  width: 850px;
+  width: 950px;
   background-color: white;
   margin: auto;
   padding: 50px;

@@ -1,8 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Tourism Revenue By Countries (2010-2020)",
-    "width": 900,
-    "height": 500,
+    "width": "container",
+    "height": 400,
     "params": [
         {
             "name": "Year_selection",
