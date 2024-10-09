@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "vconcat": [
+    {
+      "width": 300,
+      "height": 200,
+      "data": {
+        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/international-tourist-arrivals-by-region-of-origin.csv"
+      },
+    
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "Year",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {
+            "format": "%Y",
+            "title": "Year"
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "International tourist arrivals by region of origin",
+          "title": "Total Arrivals (in Millions)",
+          "axis": {
+            "format": "~s"
+          }
+        },
+        "color": {
+          "field": "Entity",
+          "scale": {
+            "scheme": "category20b"
+          },
+          "title": "Region of Origin"
+        }
+      }
+    },
+    {
+      "width": 300,
+      "height": 50,
+      "data": {
+        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/international-tourist-arrivals-by-region-of-origin.csv"
+      },
+      "mark": "area",
+      "params": [
+        {
+          "name": "brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }
+      ],
+      "encoding": {
+        "x": {
+          "timeUnit": "yearmonth",
+          "field": "Year",
+          "axis": {
+            "format": "%Y",
+            "title": "Brush to Filter"
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "International tourist arrivals by region of origin",
+          "title": "",
+          "axis": {
+            "format": "~s"  
+          }
+        },
+        "color": {
+          "field": "Entity",
+          "scale": {
+            "scheme": "category20b"
+          }
+        }
+      }
+    }
+  ]
+}
