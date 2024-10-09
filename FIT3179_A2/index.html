@@ -68,19 +68,45 @@
       </div>
     </div>
 
+    <h2>Travel Benefits Word Cloud</h2>
+    <!-- Word Cloud Visualization and Travel Benefits Explanation -->
+    <div class="pure-g">
+      <!-- Two-thirds column for the word cloud -->
+      <div class="pure-u-2-3 word-cloud-container">
+        <div class="vis-container-shadow">
+          <div id="vis3" class="vis-container"></div>
+        </div>
+      </div>
+    
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <p>Travel offers numerous benefits for both mind and body. It broadens horizons by exposing you to new cultures and experiences, fostering open-mindedness and personal growth. Traveling enhances creativity, mental well-being, and happiness while promoting adaptability, breaking routine, and building confidence. </p>
+        </div>
+        <div class="pure-u-1-2">
+          <p>It deepens social connections, strengthens communication, and reduces stress. Beyond personal development, it boosts cognitive flexibility and provides a sense of adventure. Whether trying new foods, learning languages, or escaping routine, travel enriches mental health, physical well-being, and leaves lasting memories.</p>
+        </div>
+      </div>
+
+
   </div>
 
   <script type="text/javascript">
     var vis1 = "js/1_better_choropleth_map_revenue.vg.json";
     var vis2 = "js/4_stacked_area_chart_tourist_arrival.vg.json";
+    var vis3 = "js/2_word_cloud_travel_benefit.vg.json";
 
-    // Embed the revenue visualization first
+    // Embed the first visualization
     vegaEmbed('#vis1', vis1, { "actions": false }).then(function (result) {
       // Access the Vega view instance as result.view
     }).catch(console.error);
 
     // Embed the stacked area chart visualization
     vegaEmbed('#vis2', vis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+
+    // Embed the word cloud visualization
+    vegaEmbed('#vis3', vis3, { "actions": false }).then(function (result) {
       // Access the Vega view instance as result.view
     }).catch(console.error);
   </script>

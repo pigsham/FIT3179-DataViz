@@ -1,6 +1,6 @@
-body * {
+/* body * {
   font-family: 'Open Sans', sans-serif;
-}
+} */
 
 h1 {
   font-weight: 900;
@@ -26,20 +26,22 @@ body {
 
 .vis-container {
   width: 100%;
-  max-width: 100%;  /* Ensures that the chart doesn't exceed the container width */
-  overflow: hidden; /* Hides any overflow if there is extra space */
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .vis-container-shadow {
-  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.3);  /* More balanced shadow */
-  padding: 10px;  /* Add padding inside the shadow */
-  background-color: white;  /* Ensure white background for the visualization */
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.3);
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .explanation {
-  margin-top: 10px; /* Adding more spacing between the chart and explanation */
-  padding-top: 0; /* Ensure there's no padding on the top */
+  margin-top: 10px;
+  padding-top: 0;
 }
 
 .description h2,
@@ -51,41 +53,38 @@ h1 {
   margin-bottom: 40px;
 }
 
-.small-font {
-  font-size: 14px;
+.word-cloud-container {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .africa {
-  color: #393b79; /* Africa color */
-  font-weight: 900; /* Stronger bold */
+  color: #393b79;
+  font-weight: 900;
 }
 
 .americas {
-  color: #5254a3; /* Americas color */
-  font-weight: 900; /* Stronger bold */
+  color: #5254a3;
+  font-weight: 900;
 }
 
 .east-asia {
-  color: #6b6ecf; /* East Asia and the Pacific color */
-  font-weight: 900; /* Stronger bold */
+  color: #6b6ecf;
+  font-weight: 900;
 }
 
 .europe {
-  color: #9c9ede; /* Europe color */
-  font-weight: 900; /* Stronger bold */
+  color: #9c9ede;
+  font-weight: 900;
 }
 
 .middle-east {
-  color: #637939; /* Middle East color */
-  font-weight: 900; /* Stronger bold */
-}
-
-.other {
-  color: #8ca252; /* Other color */
-  font-weight: 900; /* Stronger bold */
+  color: #637939;
+  font-weight: 900;
 }
 
 .south-asia {
-  color: #b5cf6b; /* South Asia color */
-  font-weight: 900; /* Stronger bold */
+  color: #b5cf6b;
+  font-weight: 900;
 }

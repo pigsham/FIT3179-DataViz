@@ -1,9 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "width": 800,
-  "height": 400,
+  "width": 800,  
+  "height": 300, 
   "padding": 0,
-
   "data": [
     {
       "name": "table",
@@ -94,12 +93,12 @@
       "transform": [
         {
           "type": "wordcloud",
-          "size": [800, 400],
+          "size": [888, 300], 
           "text": {"field": "text"},
           "rotate": {"field": "datum.angle"},
           "font": "Helvetica Neue, Arial",
-          "fontSize": {"expr": "10 + (random() * 25)"}, 
-          "padding": 2
+          "fontSize": {"expr": "8 + (random() * 20)"}, 
+          "padding": 1
         }
       ]
     }
