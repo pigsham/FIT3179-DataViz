@@ -1,83 +1,261 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Average Tourism Revenue per Land Area (km²) by Country (2010 - 2020)",
-      "fontSize": 20,
-      "anchor": "middle"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 350,
+  "projection": {
+    "type": "equalEarth",
+    "center": { "expr": "center_to" },
+    "scale": { "expr": "zoom_level" }
+  },
+  "config": {
+    "text": { "font": "Roboto" },
+    "background": "transparent",
+    "axis": {
+      "labelFont": "Roboto",
+      "titleFont": "Roboto",
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "grid": false
     },
-    "width": 900,
-    "height": 500,
-    "projection": {
-      "type": "equirectangular"
+    "legend": { "labelFont": "Roboto", "titleFont": "Roboto" },
+    "view": { "stroke": null }
+  },
+  "params": [
+    {
+      "name": "select_year",
+      "value": 2023,
+      "bind": {
+        "input": "range",
+        "min": 2013,
+        "max": 2023,
+        "step": 1,
+        "name": "Year: "
+      }
     },
-    "layer": [
-      {
-        "mark": {
-          "type": "geoshape",
-          "fill": "#c9daf8",
-          "stroke": null
-        },
-        "data": {
-          "sphere": true
-        }
-      },
-      {
-        "data": {
-          "graticule": true
-        },
-        "mark": {
-          "type": "geoshape",
-          "stroke": "gray",
-          "strokeWidth": 0.5
-        }
-      },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/Homework_Week10/js/ne_110m.json",
-          "format": {
-            "type": "topojson",
-            "feature": "ne_110m_admin_0_countries"
-          }
-        },
-        "transform": [
-          {
-            "lookup": "properties.ISO_A3_EH",
-            "from": {
-              "data": {
-                "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/Homework_Week10/data/tourism_revenue.csv",
-                "format": {"type": "csv"}
-              },
-              "key": "Country_Code",
-              "fields": ["Avg_Revenue", "Land_Area"]
-            }
-          },
-          {
-            "calculate": "datum.Avg_Revenue / datum.Land_Area + 0.1",
-            "as": "Revenue_per_km2"
-          }
+    {
+      "name": "zoom_level",
+      "value": 133,
+      "bind": {
+        "input": "range",
+        "min": 133,
+        "max": 1000,
+        "step": 1,
+        "name": "Zoom: "
+      }
+    },
+    {
+      "name": "center_to",
+      "value": [0,0],
+      "bind": {
+        "input": "select",
+        "options": [
+          [0,0],
+          [20,10],
+          [100,35],
+          [40, 50],
+          [-95, 45],
+          [135,-25],
+          [-60,-15]
         ],
-        "mark": {
-          "type": "geoshape",
-          "stroke": "white",
-          "strokeWidth": 0.5
-        },
-        "encoding": {
-          "color": {
-            "field": "Revenue_per_km2",
-            "type": "quantitative",
-            "title": "Tourism Revenue per km²",
-            "scale": {
-              "type": "log",  
-              "range": ["#808080", "#c7e9c0", "#74c476", "#238b45", "#00441b"]  
-            }
+        "labels": [
+          "Whole Map",
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "name": "Map Centre: "
+      }
+    }
+  ],
+
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/Homework_Week10/js/ne_110m.json",
+        "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+      },
+
+      "transform": [
+        {
+          "calculate": "'Data is not available in ' + datum.properties.NAME",
+          "as": "note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "#909090",
+        "cursor": "pointer"
+      },
+      "encoding": { "tooltip": { "field": "note" } }
+    },
+    {
+      "mark": {
+        "type": "geoshape",
+        "fill": "#c9daf8",
+        "stroke": null
+      },
+      "data": {
+        "sphere": true
+      }
+    },
+    {
+      "data": {
+        "graticule": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "gray",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/tourism-gdp-proportion-of-total-gdp.csv"
+      },
+      "mark": { "type": "geoshape", "cursor": "pointer" },
+      "params": [
+        {
+          "name": "highlight",
+          "select": {
+            "type": "point",
+            "on": "mouseover"
+          }
+        }
+      ],
+      "transform": [
+        {
+          "lookup": "Country_Code",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/Homework_Week10/js/ne_110m.json",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+              }
+            },
+            "key": "properties.ISO_A3_EH"
           },
-          "tooltip": [
-            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-            {"field": "Revenue_per_km2", "type": "quantitative", "title": "Revenue per km²"},
-            {"field": "Avg_Revenue", "type": "quantitative", "title": "Average Revenue"},
-            {"field": "Land_Area", "type": "quantitative", "title": "Land Area (km²)"}
-          ]
+          "as": "geo"
+        },
+        {
+          "filter": "datum.GDP_Percentage > 0"
+        },
+        {
+          "filter": "datum['Year'] == select_year"
+        }
+      ],
+      "mark": {"type": "geoshape", "cursor":"pointer", "stroke": "#908d8d", "strokeWidth": 0.5}
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "GDP_Percentage",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1, 2, 3, 4, 5, 6],
+            "range": ["#d0eff3", "#aedecd", "#7cc4b1", "#58aa8f", "#368f63", "#1e7338", "#004e20"]
+          },
+          "legend": {
+            "orient": "top",
+            "titleFontSize": 11,
+            "titleFont": "Roboto",
+            "titleLimit": 300
+          }
+        },
+        "tooltip": [
+          { "field": "Entity", "type": "nominal", "title": "Country" },
+          {
+            "field": "Air Pollution Deaths (deaths per 100,000)",
+            "type": "quantitative"
+          },
+          { "field": "Continent" },
+          { "field": "Year", "type": "quantitative" }
+        ],
+        "opacity": {
+          "condition": {
+            "param": "highlight",
+            "value": 1
+          },
+          "value": 0.5
+        },
+        "stroke": {
+          "condition": {
+            "param": "highlight",
+            "empty": false,
+            "value": "black"
+          },
+          "value": "black"
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "highlight",
+            "empty": false,
+            "value": 0.5
+          },
+          "value": 0.3
         }
       }
-    ]
-  }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/BenjyLimmy/FIT3179/refs/heads/main/data/continents.csv"
+      },
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "fontWeight": "bolder",
+        "fontSize": 11
+      },
+      "encoding": {
+        "text": { "field": "Continent", "type": "nominal" },
+        "latitude": { "field": "Latitude", "type": "quantitative" },
+        "longitude": { "field": "Longitude", "type": "quantitative" }
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/BenjyLimmy/FIT3179/refs/heads/main/data/deathmap_annotations.csv"
+      },
+      "encoding": {
+        "longitude": { "field": "Longitude", "type": "quantitative" },
+        "latitude": { "field": "Latitude", "type": "quantitative" }
+      },
+
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "size": 600,
+            "shape": "arrow",
+            "color": "#033e6f",
+            "strokeWidth": 2,
+            "fill": "#2b0360",
+            "dx": 10
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "fontStyle": "italic",
+            "fontWeight": "bold",
+            "fontSize": 12,
+            "color": "#040404",
+            "dy": 25,
+            "dx": -80,
+            "lineBreak": "\\",
+            "lineHeight": 7
+          },
+          "encoding": { "text": { "field": "text" } }
+        }
+      ]
+    }
+  ]
+}
