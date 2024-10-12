@@ -187,7 +187,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/BenjyLimmy/FIT3179/refs/heads/main/data/continents.csv"
+        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/continents.csv"
       },
       "mark": {
         "type": "text",
