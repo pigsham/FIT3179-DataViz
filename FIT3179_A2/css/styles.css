@@ -17,43 +17,44 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--text-color);
     font-weight: 400;
+    font-size: 1rem; /* Base font size using rem */
 }
 
 h1 {
-    font-size: 3rem;
-    margin-top: 20px;
+    font-size: 2.5rem; /* Responsive font size */
+    margin-top: 2rem;
     text-align: center;
     color: var(--contrast-color);
     font-weight: 700;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Responsive font size */
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 h3 {
     font-family: 'Rozha One', serif;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem; /* Keep as is */
+    margin-bottom: 1.5rem;
     color: var(--contrast-color);
     font-weight: 700;
-    padding-right: 15px;
-    padding-top: 20px;  
+    padding-right: 1rem;
+    padding-top: 1.5rem;
 }
 
 h4 {
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     color: var(--contrast-color);
     align-self: center;
 }
 
 .chart {
     width: 100%;
-    min-height: 300px;
+    min-height: 20vh; /* Use viewport height for responsiveness */
     height: auto;
     background-color: var(--chart-bg);
     justify-content: center;
@@ -62,37 +63,37 @@ h4 {
     color: var(--text-color);
     opacity: 1;
     cursor: pointer;
-    padding-right: 40px;
+    padding-right: 2rem; /* Adjust padding to rem */
 }
 
 .explanation {
-    margin-top: 10px;
+    margin-top: 0.5rem;
     padding-top: 0;
 }
 
 .explanation-breakdown {
-    margin-top: 0px;
+    margin-top: 0;
     padding-top: 0;
 }
 
 .divider {
-    margin-top: 5px;
+    margin-top: 0.5rem;
     flex-grow: 1;
-    height: 10px;
+    height: 0.6rem;
     background-color: var(--contrast-color);
 }
 
 .page {
-    max-width: 60%;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem;
     background-color: var(--bg-color);
 }
 
 .subsection-title {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin: 1.5rem 0;
 }
 
 .subsection {
@@ -100,40 +101,39 @@ h4 {
     border: 1px solid var(--chart-border);
     display: flex;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+    padding: 1rem; /* Add padding for better spacing */
 }
 
-
-
 #title {
-    background-color: #F4F4F9; 
+    background-color: #F4F4F9;
     text-align: center;
-    border-radius: 10px; 
-    margin: 20px auto; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
+    margin: 2rem auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     font-family: 'Berkshire Swash', cursive;
 }
 
 .two-columns {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 1.5rem;
     width: 100%;
-    padding: 0 20px;
-    margin-top: -50px; /* Reduced margin to narrow the gap */
+    padding: 0 1.5rem;
+    margin-top: -2rem;
 }
 
 /* Three Columns Layout */
 .three-columns {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .column {
     width: 100%;
-    padding: 15px;
+    padding: 1.5rem;
     background-color: var(--chart-bg);
     border: 1px solid var(--chart-border);
     border-radius: 8px;
@@ -142,7 +142,7 @@ h4 {
 .column h4 {
     font-size: 1.3rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     color: var(--contrast-color);
 }
 
@@ -152,7 +152,7 @@ h4 {
 }
 
 .full-width {
-    width: 100%;  /* Ensure the container takes full width */
+    width: 100%;  
     min-width: 100%;
 }
 
@@ -164,26 +164,26 @@ h4 {
 
 .two-charts {
     display: flex;
-    gap: 20px;
-    
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .two-charts p {
-    padding-left: 25px;
-    padding-right: 30px;
-    padding-top: 15px;
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
 }
+
 .two-charts .subsection {
-    max-width: 49%;
+    flex: 1;
+    max-width: 48%;
 }
 
-.chart-container #vis4 {
-    align-self: center;
- }
-
-
-
-/* .chart p{
-    padding-left: 30px;
-    padding-top: 0px;
-} */
+@media (max-width: 768px) {
+    .two-charts {
+        flex-direction: column;
+    }
+    .two-charts .subsection {
+        max-width: 100%;
+    }
+}
