@@ -1,41 +1,54 @@
 :root {
     --bg-color: #f0f4f8;
     --text-color: #15191e;
-    --accent-color: #264653;
+    --contrast-color: #264653;
     --chart-bg: #f0f4f8;
-    --chart-border: #f0f4f8;
+    --chart-border: #040404;
     --link-color: #3498db;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Roboto', serif;
-    background-color: var(--bg-color);
+    font-family: 'Josefin Sans', sans-serif;
     color: var(--text-color);
-    line-height: 1.6;
+    font-weight: 400;
 }
 
-.page {
-    max-width: 50%; /* Set the width to 70% of the screen */
-    margin: 0 auto; /* Center the container */
-    padding: 20px;
-    background-color: var(--bg-color);
-}
-    
-#title {
-    background-color: #F4F4F9; 
+h1 {
+    font-size: 3rem;
+    margin-top: 20px;
     text-align: center;
-    border-radius: 10px; 
-    margin: 25px auto; 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
-    font-family: 'Berkshire Swash', cursive; 
+    color: var(--contrast-color);
+    font-weight: 700;
 }
 
-.chart-container {
-    background-color: var(--chart-bg);
-    border: 1px solid var(--chart-border);
-    display: flex;
-    border-radius: 8px;
-    padding: 20px;
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Rozha One', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--contrast-color);
+    font-weight: 700;
+    padding-right: 15px;
+    padding-top: 20px;  
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--contrast-color);
+    align-self: center;
 }
 
 .chart {
@@ -48,53 +61,129 @@ body {
     font-size: 0.8rem;
     color: var(--text-color);
     opacity: 1;
-    transition: all 0.3s ease;
     cursor: pointer;
     padding-right: 40px;
 }
 
-.chart p {
-    padding-left: 30px;
-    padding-top: 0px;
+.explanation {
+    margin-top: 10px;
+    padding-top: 0;
 }
 
-.hr {
+.explanation-breakdown {
+    margin-top: 0px;
+    padding-top: 0;
+}
+
+.divider {
     margin-top: 5px;
     flex-grow: 1;
     height: 10px;
-    background-color: var(--accent-color);
+    background-color: var(--contrast-color);
 }
 
-.row {
-    margin-bottom: 40px;
+.page {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--bg-color);
 }
 
-.subheading-container {
+.subsection-title {
     display: flex;
-    justify-content: center; /* Aligns the content horizontally in the center */
-    align-items: center; /* Ensures vertical alignment */
+    align-items: center;
     margin: 20px 0;
 }
 
-h1 {
-    font-size: 3.5em;
-    margin-top: 20px;
+.subsection {
+    background-color: var(--chart-bg);
+    border: 1px solid var(--chart-border);
+    display: flex;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+
+#title {
+    background-color: #F4F4F9; 
     text-align: center;
-    color: var(--accent-color);
+    border-radius: 10px; 
+    margin: 20px auto; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    font-family: 'Berkshire Swash', cursive;
 }
 
-h2 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
+.two-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: -50px; /* Reduced margin to narrow the gap */
 }
 
-h3 {
-    font-family: 'Rozha One', serif;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--accent-color);
-    font-weight: 1000;
-    margin: 0;
-    padding-right: 15px;
-    padding-left: 20px;
+/* Three Columns Layout */
+.three-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
+
+.column {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--chart-bg);
+    border: 1px solid var(--chart-border);
+    border-radius: 8px;
+}
+
+.column h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--contrast-color);
+}
+
+.column p {
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.full-width {
+    width: 100%;  /* Ensure the container takes full width */
+    min-width: 100%;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--chart-border);
+}
+
+.two-charts {
+    display: flex;
+    gap: 20px;
+    
+}
+
+.two-charts p {
+    padding-left: 25px;
+    padding-right: 30px;
+    padding-top: 15px;
+}
+.two-charts .subsection {
+    max-width: 49%;
+}
+
+.chart-container #vis4 {
+    align-self: center;
+ }
+
+
+
+/* .chart p{
+    padding-left: 30px;
+    padding-top: 0px;
+} */

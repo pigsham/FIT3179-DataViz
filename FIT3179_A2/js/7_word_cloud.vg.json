@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1100,
+  "height": 400,
+  "data": {
+    "values": [
+      {"text": "Adapt to new environments", "x": 350, "y": 370, "size": 20},
+      {"text": "Better communication", "x": 650, "y": 150, "size": 20},
+      {"text": "Boosts happiness", "x": 560, "y": 300, "size": 22},
+      {"text": "Boosts self-awareness", "x": 100, "y": 500, "size": 20},
+      {"text": "Broadens perspective", "x": 240, "y": 340, "size": 20},
+      {"text": "Breaks monotony", "x": 400, "y": 425, "size": 22},
+      {"text": "Build lasting memories", "x": 515, "y": 410, "size": 20},
+      {"text": "Builds patience", "x": 400, "y": 250, "size": 20},
+      {"text": "Builds resilience", "x": 500, "y": 500, "size": 20},
+      {"text": "Cognitive flexibility", "x": 400, "y": 500, "size": 20},
+      {"text": "Confidence boost", "x": 100, "y": 220, "size": 23},
+      {"text": "Creativity boost", "x": 560, "y": 350, "size": 20},
+      {"text": "Cultural enrichment", "x": 600, "y": 250, "size": 20},
+      {"text": "Different perspectives", "x": 150, "y": 200, "size": 18},
+      {"text": "Discover new cultures", "x": 350, "y": 150, "size": 20},
+      {"text": "Embrace change", "x": 150, "y": 450, "size": 24},
+      {"text": "Enhances problem-solving", "x": 324, "y": 460, "size": 22},
+      {"text": "Enhances self-esteem", "x": 160, "y": 170, "size": 22},
+      {"text": "Escape from routine", "x": 100, "y": 300, "size": 18},
+      {"text": "Experience diversity", "x": 500, "y": 135, "size": 24},
+      {"text": "Expand skillset", "x": 100, "y": 135, "size": 22},
+      {"text": "Fosters social connections", "x": 600, "y": 100, "size": 20},
+      {"text": "Improves mental health", "x": 525, "y": 200, "size": 20},
+      {"text": "Increases creativity", "x": 400, "y": 100, "size": 20},
+      {"text": "Mental well-being", "x": 430, "y": 200, "size": 18},
+      {"text": "New connections", "x": 250, "y": 100, "size": 24},
+      {"text": "New experiences", "x": 500, "y": 250, "size": 22},
+      {"text": "New languages", "x": 625, "y": 425, "size": 22},
+      {"text": "Open-mindedness", "x": 300, "y": 400, "size": 18},
+      {"text": "Personal growth", "x": 100, "y": 390, "size": 24},
+      {"text": "Physical health benefits", "x": 450, "y": 450, "size": 18},
+      {"text": "Reduces stress", "x": 470, "y": 170, "size": 22},
+      {"text": "Relaxes mind", "x": 580, "y": 470, "size": 22},
+      {"text": "Relieves work pressure", "x": 300, "y": 200, "size": 20},
+      {"text": "Self-discovery", "x": 150, "y": 270, "size": 22},
+      {"text": "Sense of adventure", "x": 250, "y": 230, "size": 22},
+      {"text": "Strengthens empathy", "x": 450, "y": 350, "size": 22},
+      {"text": "Strengthens relationships", "x": 100, "y": 350, "size": 20},
+      {"text": "Travel expands horizons", "x": 370, "y": 300, "size": 40},
+      {"text": "Try new foods", "x": 100, "y": 100, "size": 20}
+    ]
+  },
+  "mark": {
+    "type": "text",
+    "align": "center",
+    "baseline": "middle"
+  },
+  "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative",
+      "axis": null
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "axis": null
+    },
+    "text": {"field": "text"},
+    "size": {
+      "field": "size",
+      "legend": null
+    },
+    "color": {
+      "field": "size",
+      "type": "quantitative",
+      "scale": {
+        "range": ["#1f78b4", "#a6cee3", "#08306b"]
+      },
+      "legend": null
+    },
+    "opacity": {
+      "condition": {
+        "param": "highlight",
+        "value": 1
+      },
+      "value": 0.3
+    }
+  },
+  
+  "config": {
+    "background": "transparent",
+    "view": { "stroke": "transparent" }
+  }
+}

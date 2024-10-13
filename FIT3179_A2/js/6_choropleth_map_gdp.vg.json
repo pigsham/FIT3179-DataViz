@@ -20,7 +20,7 @@
       "bind": {
         "input": "range",
         "min": 130,
-        "max": 1000,
+        "max": 500,
         "step": 1,
         "name": "Zoom: "
       }
@@ -58,19 +58,11 @@
     "scale": { "expr": "zoom_level" }
   },
   "config": {
-    "text": { "font": "Roboto" },
     "background": "transparent",
-    "axis": {
-      "labelFont": "Roboto",
-      "titleFont": "Roboto",
-      "labelFontSize": 12,
-      "titleFontSize": 14,
-      "grid": false
-    },
-    "legend": { "labelFont": "Roboto", "titleFont": "Roboto" },
     "view": { "stroke": null }
   },
   "layer": [
+    
     {
       "mark": {
         "type": "geoshape",
@@ -145,6 +137,7 @@
         }
       ],      "layer":[
         {"mark": {"type": "geoshape", "cursor":"pointer", "stroke": "#908d8d", "strokeWidth": 0.5}}
+        
     ],
       "encoding": {
         "shape": {
@@ -159,10 +152,11 @@
             "domain": [1, 2, 3, 4, 5, 6],
             "range": ["#d0eff3", "#aedecd", "#7cc4b1", "#58aa8f", "#368f63", "#1e7338", "#004e20"]
           },
-          "legend":
-          {
+          "legend": {
             "title": "Tourism GDP (% of Total GDP)",
-            "orient": "top"
+            "orient": "top",
+            "titleFont": "Roboto",        
+            "labelFont": "Roboto"        
           }
         },
         "tooltip": [
@@ -187,7 +181,38 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/continents.csv"
+        "values": [
+            {
+                "continent": "North America",
+                "latitude": 45,
+                "longitude": -95
+            },
+            {
+                "continent": "Europe",
+                "latitude": 55,
+                "longitude": 35
+            },
+            {
+                "continent": "South America",
+                "latitude": -15,
+                "longitude": -60
+            },
+            {
+                "continent": "Africa",
+                "latitude": 10,
+                "longitude": 20
+            },
+            {
+                "continent": "Asia",
+                "latitude": 35,
+                "longitude": 100
+            },
+            {
+                "continent": "Oceania",
+                "latitude": -25,
+                "longitude": 135
+            }
+        ]
       },
       "mark": {
         "type": "text",
@@ -196,10 +221,58 @@
         "fontSize": 11
       },
       "encoding": {
-        "text": { "field": "Continent", "type": "nominal" },
-        "latitude": { "field": "Latitude", "type": "quantitative" },
-        "longitude": { "field": "Longitude", "type": "quantitative" }
+        "text": { "field": "continent", "type": "nominal" },
+        "latitude": { "field": "latitude", "type": "quantitative" },
+        "longitude": { "field": "longitude", "type": "quantitative" }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "Longitude": -120,
+            "Latitude": 10,
+            "text": "Mexico has consistently high\\tourism GDP percentage\\ across the years."
+          },
+          {
+            "Longitude": 90,
+            "Latitude": 10,
+            "text": "Thailand also has\\ consistently high\\tourism GDP percentage\\ across the years."
+          }
+        ]
+      },
+      "encoding": {
+        "longitude": { "field": "Longitude", "type": "quantitative" },
+        "latitude": { "field": "Latitude", "type": "quantitative" }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "size": 600,
+            "shape": "arrow",
+            "color": "#4B0082",
+            "fill": "#4B0082",
+            "strokeWidth": 2,
+            "angle": 45
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "fontStyle": "italic",
+            "fontWeight": "bold",
+            "fontSize": 12,
+            "color": "#4B0082",
+            "dy": 30,
+            "dx": -80,
+            "lineBreak": "\\",
+            "lineHeight": 10
+          },
+          "encoding": { "text": { "field": "text" } }
+        }
+      ]
     }
   ]
 } 

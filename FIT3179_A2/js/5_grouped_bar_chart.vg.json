@@ -1,41 +1,71 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 825,
-  "height": 400,
+  "width": 95,
+  "height": 348,
   "data": {
-      "values": [
-          {"App": "Booking", "Year": 2019, "Revenue": 15},
-          {"App": "Booking", "Year": 2020, "Revenue": 6.8},
-          {"App": "Booking", "Year": 2021, "Revenue": 10.9},
-          {"App": "Booking", "Year": 2022, "Revenue": 17},
-          {"App": "Booking", "Year": 2023, "Revenue": 21.3},
-          {"App": "Expedia", "Year": 2019, "Revenue": 12},
-          {"App": "Expedia", "Year": 2020, "Revenue": 5.1},
-          {"App": "Expedia", "Year": 2021, "Revenue": 8.5},
-          {"App": "Expedia", "Year": 2022, "Revenue": 11.6},
-          {"App": "Expedia", "Year": 2023, "Revenue": 12.3},
-          {"App": "Airbnb", "Year": 2019, "Revenue": 4.7},
-          {"App": "Airbnb", "Year": 2020, "Revenue": 3.4},
-          {"App": "Airbnb", "Year": 2021, "Revenue": 5.9},
-          {"App": "Airbnb", "Year": 2022, "Revenue": 8.3},
-          {"App": "Airbnb", "Year": 2023, "Revenue": 9.9},
-          {"App": "Trip.com", "Year": 2019, "Revenue": 5.1},
-          {"App": "Trip.com", "Year": 2020, "Revenue": 2.8},
-          {"App": "Trip.com", "Year": 2021, "Revenue": 3.1},
-          {"App": "Trip.com", "Year": 2022, "Revenue": 2.9},
-          {"App": "Trip.com", "Year": 2023, "Revenue": 6.3},
-          {"App": "TripAdvisor", "Year": 2019, "Revenue": 1.5},
-          {"App": "TripAdvisor", "Year": 2020, "Revenue": 0.6},
-          {"App": "TripAdvisor", "Year": 2021, "Revenue": 0.9},
-          {"App": "TripAdvisor", "Year": 2022, "Revenue": 1.4},
-          {"App": "TripAdvisor", "Year": 2023, "Revenue": 1.7}
-        ]
+    "values": [
+      {"App": "Booking", "Year": 2019, "Revenue": 15},
+      {"App": "Booking", "Year": 2020, "Revenue": 6.8},
+      {"App": "Booking", "Year": 2021, "Revenue": 10.9},
+      {"App": "Booking", "Year": 2022, "Revenue": 17},
+      {"App": "Booking", "Year": 2023, "Revenue": 21.3},
+      {"App": "Expedia", "Year": 2019, "Revenue": 12},
+      {"App": "Expedia", "Year": 2020, "Revenue": 5.1},
+      {"App": "Expedia", "Year": 2021, "Revenue": 8.5},
+      {"App": "Expedia", "Year": 2022, "Revenue": 11.6},
+      {"App": "Expedia", "Year": 2023, "Revenue": 12.3},
+      {"App": "Airbnb", "Year": 2019, "Revenue": 4.7},
+      {"App": "Airbnb", "Year": 2020, "Revenue": 3.4},
+      {"App": "Airbnb", "Year": 2021, "Revenue": 5.9},
+      {"App": "Airbnb", "Year": 2022, "Revenue": 8.3},
+      {"App": "Airbnb", "Year": 2023, "Revenue": 9.9},
+      {"App": "Trip.com", "Year": 2019, "Revenue": 5.1},
+      {"App": "Trip.com", "Year": 2020, "Revenue": 2.8},
+      {"App": "Trip.com", "Year": 2021, "Revenue": 3.1},
+      {"App": "Trip.com", "Year": 2022, "Revenue": 2.9},
+      {"App": "Trip.com", "Year": 2023, "Revenue": 6.3},
+      {"App": "TripAdvisor", "Year": 2019, "Revenue": 1.5},
+      {"App": "TripAdvisor", "Year": 2020, "Revenue": 0.6},
+      {"App": "TripAdvisor", "Year": 2021, "Revenue": 0.9},
+      {"App": "TripAdvisor", "Year": 2022, "Revenue": 1.4},
+      {"App": "TripAdvisor", "Year": 2023, "Revenue": 1.7}
+    ]
   },
   "mark": "bar",
   "encoding": {
-    "x": {"field": "App"},
-    "y": {"field": "Revenue", "type": "quantitative"},
-    "xOffset": {"field": "Year"},
-    "color": {"field": "Year"}
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {"labelAngle": -90},
+      "title": "Year"
+    },
+    "y": {
+      "field": "Revenue",
+      "type": "quantitative",
+      "title": "Revenue (in billion USD)"
+    },
+    "color": {
+      "field": "App",
+      "type": "nominal",
+      "scale": {
+        "range": ["#9ebcda", "#8c96c6", "#8c6bb1", "#88419d", "#6e016b"]
+      },
+      "legend": {"title": "App"}
+    },
+    "column": {
+      "field": "App",
+      "type": "nominal",
+      "spacing": 10
+    },
+    "tooltip": [
+      {"field": "App", "type": "nominal", "title": "App"},
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "Revenue", "type": "quantitative", "title": "Revenue (Billion USD)"}
+    ]
+  },
+  "config": {
+    "legend": {"orient": "bottom"},
+    "background": "transparent",
+    "view": { "stroke": "transparent" }
   }
 }

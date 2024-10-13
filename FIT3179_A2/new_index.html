@@ -15,51 +15,167 @@
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
 
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=PT+Sans&family=Rozha+One&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Josefin+Sans:wght@400;700&family=PT+Sans&family=Rozha+One&display=swap" rel="stylesheet">
     
     <!-- External CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles2.css" media="all">
 </head>
 
 <body>
-    <!-- Use the page class for width control -->
+
     <div class="page">
         <div id="title">
             <h1>Global Tourism and Travel</h1>
             <h2>Explore Tourism and Travel Data Across the Globe</h2>
         </div>
 
-        <div class="subheading-container">
+        <div class="subsection-title">
             <h3>Global Overview</h3>
-            <div class="hr"></div>
+            <div class="divider"></div>
         </div>
-
-        <div class="row">
-            <div class="chart-container">
-              <div>
-                <h4>Tourism GDP Percentage of Total GDP</h4>
-                <p class="description">
-                  This map highlights global air pollution deaths per 100,000 people. In 2023,
-                  <strong style="font-size: 1.3em; color: #c00505d0">African</strong>
-                  countries show significantly higher death rates, while
-                  <strong style="font-size: 1.2em; color: #c00505d0">Asia</strong>
-                  sees moderate figures, and
-                  <strong style="font-size: 1.1em; color: #c00505d0">North America</strong>
-                  experiences lower numbers. Historically, global air pollution deaths were extremely high,
-                  but experienced a global decline leading to 2023. The drop in pollution deaths can be linked to
-                  global policies aimed at improving air quality and reducing industrial emissions.
+        
+        <div class="subsection">
+            <div id="vis1" class="chart"></div>
+            <div class="explanation">
+                <h4>Percentage of Tourism GDP by Countries</h4>
+                <p>
+                    The percentage of tourism GDP data reveals fluctuations due to economic changes and the COVID-19 pandemic. 
+                    Countries heavily reliant on tourism, like <strong style="color: #58aa8f">Aruba</strong>, 
+                    <strong style="color: #58aa8f">Malta</strong>, and 
+                    <strong style="color: #58aa8f">Antigua and Barbuda</strong>, consistently show high percentages 
+                    (over 10%). A sharp decline occurred in 2020 for many nations, especially 
+                    <strong style="color: #58aa8f">Mexico</strong>, 
+                    <strong style="color: #58aa8f">Thailand</strong>, and 
+                    <strong style="color: #58aa8f">Vietnam</strong>, due to travel restrictions. Recovery is visible, 
+                    though some countries still lag behind pre-pandemic levels.
                 </p>
-              </div>
-              <div id="vis1" class="chart"></div>
             </div>
         </div>
-    </div>
+
+        <div class="subsection">
+            <div id="vis2" class="chart"></div>
+            <div class="explanation">
+                <h4>Tourist Arrivals Over the Years</h4>
+                <p>
+                    International tourist arrivals showed steady growth across all regions from 2010 to 2019, with 
+                    <strong style="color: #e78ac3">Europe</strong> leading in numbers. However, the <strong>COVID-19 pandemic in 2020</strong> caused a dramatic drop, 
+                    especially in <strong style="color: #e78ac3">Europe</strong>, <strong style="color: #8da0cb">East Asia</strong>, and the <strong style="color: #fc8d62">Americas</strong>. 
+                    For example, <strong style="color: #e78ac3">Europe</strong> saw a fall from 878 million in 2019 to 325 million in 2020. 
+                    While there was <strong>a partial recovery in 2021,</strong> tourist arrivals remained significantly below pre-pandemic levels, highlighting the ongoing impact of the pandemic on global tourism.
+                </p>
+            </div>
+        </div>
+
+        <div class="subsection-title">
+            <h3>Travel Benefits</h3>
+            <div class="divider"></div>
+        </div>
+
+        <div class="wordcloud-container">
+            <div id="vis3" class="wordcloud-chart"></div>
+            <div class="two-columns">
+                <p>
+                    Traveling offers numerous benefits that contribute to both <strong>personal growth</strong> and <strong>mental well-being</strong>. 
+                    It <strong>broadens perspectives</strong>, fosters creativity, and strengthens social connections by exposing individuals to new cultures and experiences.
+                </p>
+                <p>
+                    Additionally, it <strong>reduces stress</strong>, <strong>boosts happiness</strong>, and <strong>enhances problem-solving skills</strong>. 
+                    These benefits contribute to improved cognitive flexibility and adaptability, making travel an essential activity for <strong>mental health</strong> and <strong>personal development</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="subsection-title">
+            <h3>Travel Suggestions</h3>
+            <div class="divider"></div>
+        </div>
+
+        <!-- <div class="subsection">
+            <div id="vis4" class="chart full-width"></div>
+        </div>
+        <div class="three-columns">
+            <div class="column">
+                <h4 style="color: #1b9e77;">Business Travel</h4>
+                <p><strong style="color: #1b9e77">Business Travel</strong> usually requires <strong>higher expenditure</strong> on 
+                    <strong style="color: #DDCC77">transportation</strong> and <strong style="color: #CC6677">accommodation</strong>. 
+                    It is essential to budget for these key elements when planning a trip for work purposes.</p>
+            </div>
+            <div class="column">
+                <h4 style="color: #1f78b4;">Family Travel</h4>
+                <p><strong style="color: #1f78b4">Family Travel</strong> focuses on <strong>comfort</strong> and <strong>activities</strong> that cater to all members of the family. 
+                    More spending is expected on <strong style="color: #CC6677">accommodation</strong>, <strong style="color: #882255">entertainment</strong>, 
+                    and <strong style="color: #d95f02">dining.</strong></p>
+            </div>
+            <div class="column">
+                <h4 style="color: #d95f02;">Solo Travel</h4>
+                <p><strong style="color: #d95f02">Solo Travel</strong> allows for more <strong>flexibility</strong>. 
+                    Budgets for solo trips often allocate a significant portion to <strong style="color: #882255">entertainment</strong>, 
+                    as well as affordable <strong style="color: #CC6677">accommodation</strong> and <strong style="color: #DDCC77">transportation</strong>.</p>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="explanation">
+                <h4>Tourist Arrivals Over the Years</h4>
+                <p>
+                    International tourist arrivals showed steady growth across all regions from 2010 to 2019, with 
+                    <strong style="color: #e78ac3">Europe</strong> leading in numbers. However, the <strong>COVID-19 pandemic in 2020</strong> caused a dramatic drop, 
+                    especially in <strong style="color: #e78ac3">Europe</strong>, <strong style="color: #8da0cb">East Asia</strong>, and the <strong style="color: #fc8d62">Americas</strong>. 
+                    For example, <strong style="color: #e78ac3">Europe</strong> saw a fall from 878 million in 2019 to 325 million in 2020. 
+                    While there was <strong>a partial recovery in 2021,</strong> tourist arrivals remained significantly below pre-pandemic levels, highlighting the ongoing impact of the pandemic on global tourism.
+                </p>
+            </div>
+            <div id="vis5" class="chart"></div>
+        </div> -->
+
+        <div class="two-charts">
+            <div class="subsection flex-column">
+            <h4>Travel Budget Suggestions</h4>
+            <div id="vis4" class="chart"></div>
+
+            <p class="explanation-breakdown">
+                <strong style="color: #1b9e77">Business Travel</strong> involves higher expenditure on <strong style="color: #DDCC77">transportation</strong> and <strong style="color: #CC6677">accommodation</strong>. 
+            </p>
+            <p class="explanation-breakdown">
+                <strong style="color: #1f78b4">Family Travel</strong> focuses on comfort, activities, and spending more on <strong style="color: #CC6677">accommodation</strong>, 
+                <strong style="color: #882255">entertainment</strong>, and <strong style="color: #AA4499">dining</strong>. 
+            </p>
+            <p class="explanation-breakdown">
+                <strong style="color: #d95f02">Solo Travel</strong> allows flexibility, emphasizing <strong style="color: #882255">entertainment</strong>, and budget-friendly <strong style="color: #CC6677">accommodation</strong> and <strong style="color: #DDCC77">transportation</strong>.
+            </p>
+              </div>
+              <div class="subsection flex-column">
+                <h4>Accommodation Apps Revenue</h4>
+                <div id="vis5" class="chart"></div>
+                <p class="explanation-breakdown">
+                    <strong style="color: #9ebcda">Booking</strong> leads in revenue, especially in 2023, due to its global reach and seamless booking experience. 
+                </p>
+                <p class="explanation-breakdown">
+                    <strong style="color: #6e016b">TripAdvisor</strong>, focusing more on reviews, consistently shows the smallest revenue. 
+                </p>
+                <p class="explanation-breakdown">
+                    While <strong style="color: #9ebcda">Booking</strong> excels in direct bookings, <strong style="color: #6e016b">TripAdvisor</strong> relies on referrals. 
+                    Despite this, both apps provide easy access to accommodations, simplifying travel planning for users.
+                </p>
+              </div>
+            </div>
 
     <!-- Vega-Lite Script for Visualization -->
     <script type="text/javascript">
         var vis1 = "js/6_choropleth_map_gdp.vg.json";
         vegaEmbed('#vis1', vis1, { "actions": false }).then(function (result) {}).catch(console.error);
+
+        var vis2 = "js/4_stacked_area_chart_tourist_arrival.vg.json";
+        vegaEmbed('#vis2', vis2, { "actions": false }).then(function (result) {}).catch(console.error);
+
+        var vis3 = "js/7_word_cloud.vg.json";
+        vegaEmbed('#vis3', vis3, { "actions": false }).then(function (result) {}).catch(console.error);
+
+        var vis4 = "js/3_sankey_diagram_travel_budget.vg.json";
+        vegaEmbed('#vis4', vis4, { "actions": false }).then(function (result) {}).catch(console.error);
+
+        var vis5 = "js/5_grouped_bar_chart.vg.json";
+        vegaEmbed('#vis5', vis5, { "actions": false }).then(function (result) {}).catch(console.error);
     </script>
 </body>
 </html>

@@ -1,55 +1,136 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/international-tourist-arrivals-by-region-of-origin.csv"
+  },
+  "config": {
+    "background": "transparent",
+    "view": { "stroke": "transparent" }
+  },
   "vconcat": [
     {
-      "width": 770,
-      "height": 200,
-      "data": {
-        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/international-tourist-arrivals-by-region-of-origin.csv"
-      },
-      "mark": "area",
-      "encoding": {
-        "x": {
-          "timeUnit": "year",
-          "field": "Year",
-          "scale": {"domain": {"param": "brush"}},
-          "axis": {
-            "format": "%Y",
-            "title": "Year"
+      "width": 650,
+      "height": 250,
+      "layer": [
+        {
+          "mark": "area",
+          "params": [
+            {
+              "name": "highlight",
+              "select": {
+                "type": "point",
+                "on": "mouseover"
+              }
+            }
+          ],
+          "transform": [
+            {
+              "calculate": "datum['International tourist arrivals by region of origin'] / 1e9",
+              "as": "Arrivals_in_Billions"
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "axis": { "title": "Year" },
+              "scale": { "domain": { "param": "brush" } }
+            },
+            "y": {
+              "field": "Arrivals_in_Billions",
+              "type": "quantitative",
+              "axis": {
+                "title": "Total Arrivals",
+                "format": ".1f",
+                "labelExpr": "datum.value + 'B'"
+              }
+            },
+            "color": {
+              "field": "Entity",
+              "scale": {
+                "range": ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f", "#e5c494"]
+              },
+              "title": "Region of Origin",
+              "legend": {
+                "orient": "right",
+                "title": "Region of Origin"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "Entity",
+                "type": "nominal",
+                "title": "Region"
+              },
+              {
+                "field": "Year",
+                "type": "temporal",
+                "title": "Year",
+                "timeUnit": "year"
+              },
+              {
+                "field": "Arrivals_in_Billions",
+                "type": "quantitative",
+                "title": "Total Arrivals (Billions)",
+                "format": ".2f"
+              }
+            ],
+            "opacity": {
+              "condition": {
+                "param": "highlight",
+                "value": 0.8
+              },
+              "value": 0.2
+            }
           }
         },
-        "y": {
-          "aggregate": "sum",
-          "field": "International tourist arrivals by region of origin",
-          "title": "Total Arrivals (in Millions)",
-          "axis": {
-            "format": "~s"
+        {
+          "mark": { "type": "rule", "color": "black", "strokeDash": [7, 5] },
+          "encoding": {
+            "x": {
+              "datum": { "year": 2020 },
+              "type": "temporal"
+            }
           }
         },
-        "color": {
-          "field": "Entity",
-          "scale": {
-            "scheme": "category20b"
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -100, 
+            "dy": -10, 
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "black"
           },
-          "title": "Region of Origin",
-          "legend": {
-            "orient": "right",  
-            "title": "Region of Origin"
+          "encoding": {
+            "x": {
+              "datum": { "year": 2020 },
+              "type": "temporal"
+            },
+            "y": {
+              "datum": 1.8, 
+              "type": "quantitative"
+            },
+            "text": { "value": "COVID-19 Pandemic" }
           }
         }
-      }
+      ]
     },
     {
-      "width": 770,
+      "width": 650,
       "height": 50,
-      "data": {
-        "url": "https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/international-tourist-arrivals-by-region-of-origin.csv"
-      },
-      "mark": "area",
+      "mark": "line",
       "params": [
         {
           "name": "brush",
-          "select": {"type": "interval", "encodings": ["x"]}
+          "select": { "type": "interval", "encodings": ["x"] }
+        }
+      ],
+      "transform": [
+        {
+          "calculate": "datum['International tourist arrivals by region of origin'] / 1e9",
+          "as": "Arrivals_in_Billions"
         }
       ],
       "encoding": {
@@ -62,17 +143,18 @@
           }
         },
         "y": {
-          "aggregate": "sum",
-          "field": "International tourist arrivals by region of origin",
-          "title": "",
+          "field": "Arrivals_in_Billions",
+          "type": "quantitative",
           "axis": {
-            "format": "~s"  
+            "title": "Total Arrivals",
+            "format": ".1f",
+            "labelExpr": "datum.value + 'B'"
           }
         },
         "color": {
           "field": "Entity",
           "scale": {
-            "scheme": "category20b"
+            "range": ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f", "#e5c494"]
           }
         }
       }
