@@ -4,7 +4,7 @@
   "width": 350,
   "height": 250,
   "data": {
-    "url":"https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/cleaned_airports_data.csv"
+    "url":"https://raw.githubusercontent.com/pigsham/FIT3179-DataViz/refs/heads/main/FIT3179_A2/data/cleaned_airports_data_with_region.csv"
   },
   "config": {
     "background": "transparent",
@@ -20,12 +20,22 @@
       "name": "flights_no_max",
       "value": 40,
       "bind": {"input": "range", "min": 0, "max": 40, "step": 1, "name": "Maximum flights"}
+    },
+    {
+      "name": "region_selection",
+      "bind":{
+        "input": "select",
+        "options": [null, "Asia", "Europe", "North America", "Oceania", "South America"],
+        "labels": ["All Regions", "Asia", "Europe", "North America", "Oceania", "South America"],
+        "name": "Region: "
+      }
     }
   ],
   "transform": [
     {
       "filter": {"field": "Flights", "range": [{"expr": "flights_no_min"}, {"expr": "flights_no_max"}]}
-    }
+    },
+    {"filter": "region_selection == null || datum.Region == region_selection"}
   ],
   "layer": [{
     "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"},

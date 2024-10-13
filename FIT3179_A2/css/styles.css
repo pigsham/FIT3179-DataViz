@@ -102,7 +102,6 @@ h4 {
     border: 1px solid var(--chart-border);
     border-radius: 8px;
     display: flex;
-    margin-bottom: 1rem;
     padding: 1rem; /* Add padding for better spacing */
 }
 
@@ -182,15 +181,28 @@ h4 {
     width: 33%; /* Width of the radial plot container */
 }
 
-.metadata {
-    text-align: left;
-    font-size: 0.9rem;
-    margin-top: 20px;
-    padding: 10px;
-    color: var(--text-color);
-    background-color: var(--page-color);
-    border: 1px solid var(--chart-border);
-    border-radius: 8px;
-    max-width: 400px;
-    margin-left: 0; /* Aligns the metadata to the bottom-left */
+.data-sources{
+    font-style: italic;
+}
+
+footer {
+    background-color: #264653; /* Dark background color */
+    color: #cecece; /* Light text color */
+    text-align: center; /* Center the text */
+    padding: 20px; /* Padding inside the footer */
+    font-size: 0.9rem; /* Adjust font size */
+    max-width: 1100px; /* Match the max-width of the content */
+    margin: 0 auto; /* Center align the footer */
+    position: relative; /* Keep it at the bottom of the content */
+    bottom: 0; /* Align at the bottom */
+}
+
+footer p {
+    margin-top: 0.1rem;
+    font-size:x-small;
+}
+
+footer a {
+    color: var(--link-color); /* Change link color */
+    text-decoration: none; /* Remove underline from links */
 }
