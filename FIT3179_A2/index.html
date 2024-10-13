@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,29 +12,29 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
     <!-- Import pure.css for minimal styling -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Josefin+Sans:wght@400;700&family=PT+Sans&family=Rozha+One&display=swap" rel="stylesheet">
-    
+
     <!-- External CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 </head>
 
 <body>
-
     <div class="page">
-        <div id="title">
+        <!-- Title Section -->
+        <div class="title">
             <h1>Global Tourism and Travel</h1>
             <h2>Explore Tourism and Travel Data Across the Globe</h2>
         </div>
 
+        <!-- Global Overview Section -->
         <div class="subsection-title">
             <h3>Global Overview</h3>
             <div class="divider"></div>
         </div>
-        
+
         <div class="subsection">
             <div id="vis1" class="chart"></div>
             <div class="explanation">
@@ -52,6 +53,7 @@
             </div>
         </div>
 
+        <!-- Tourist Arrivals Section -->
         <div class="subsection">
             <div id="vis2" class="chart"></div>
             <div class="explanation">
@@ -66,62 +68,68 @@
             </div>
         </div>
 
+        <!-- Travel Benefits Section -->
         <div class="subsection-title">
             <h3>Travel Benefits</h3>
             <div class="divider"></div>
         </div>
 
-        <div class="wordcloud-container">
-            <div id="vis3" class="wordcloud-chart"></div>
-            <div class="two-columns">
-                <p>
-                    Traveling offers numerous benefits that contribute to both <strong>personal growth</strong> and <strong>mental well-being</strong>. 
-                    It <strong>broadens perspectives</strong>, fosters creativity, and strengthens social connections by exposing individuals to new cultures and experiences.
-                </p>
-                <p>
-                    Additionally, it <strong>reduces stress</strong>, <strong>boosts happiness</strong>, and <strong>enhances problem-solving skills</strong>. 
-                    These benefits contribute to improved cognitive flexibility and adaptability, making travel an essential activity for <strong>mental health</strong> and <strong>personal development</strong>.
-                </p>
-            </div>
+        <div id="vis3"></div>
+        <div class="two-columns">
+            <p>
+                Traveling offers numerous benefits that contribute to both <strong>personal growth</strong> and <strong>mental well-being</strong>. 
+                It <strong>broadens perspectives</strong>, fosters creativity, and strengthens social connections by exposing individuals to new cultures and experiences.
+            </p>
+            <p>
+                Additionally, it <strong>reduces stress</strong>, <strong>boosts happiness</strong>, and <strong>enhances problem-solving skills</strong>. 
+                These benefits contribute to improved cognitive flexibility and adaptability, making travel an essential activity for <strong>mental health</strong> and <strong>personal development</strong>.
+            </p>
         </div>
 
+        <!-- Travel Suggestions Section -->
         <div class="subsection-title">
             <h3>Travel Suggestions</h3>
             <div class="divider"></div>
         </div>
 
-
         <div class="two-charts">
             <div class="subsection flex-column">
-            <h4>Travel Budget Suggestions</h4>
-            <div id="vis4" class="chart"></div>
+                <h4>Travel Budget Suggestions</h4>
+                <div id="vis4" class="chart"></div>
 
-            <p class="explanation-breakdown">
-                <strong style="color: #1b9e77">Business Travel</strong> involves higher expenditure on <strong style="color: #DDCC77">transportation</strong> and <strong style="color: #CC6677">accommodation</strong>. 
-            </p>
-            <p class="explanation-breakdown">
-                <strong style="color: #1f78b4">Family Travel</strong> focuses on comfort, activities, and spending more on <strong style="color: #CC6677">accommodation</strong>, 
-                <strong style="color: #882255">entertainment</strong>, and <strong style="color: #AA4499">dining</strong>. 
-            </p>
-            <p class="explanation-breakdown">
-                <strong style="color: #d95f02">Solo Travel</strong> allows flexibility, emphasizing <strong style="color: #882255">entertainment</strong>, and budget-friendly <strong style="color: #CC6677">accommodation</strong> and <strong style="color: #DDCC77">transportation</strong>.
-            </p>
-              </div>
-              <div class="subsection flex-column">
-                <h4>Accommodation Apps Revenue</h4>
-                <div id="vis5" class="chart"></div>
                 <p class="explanation-breakdown">
-                    <strong style="color: #9ebcda">Booking</strong> leads in revenue, especially in 2023, due to its global reach and seamless booking experience. 
+                    <strong style="color: #1b9e77">Business Travel</strong> involves higher expenditure on 
+                    <strong style="color: #DDCC77">transportation</strong> and <strong style="color: #CC6677">accommodation</strong>.
                 </p>
                 <p class="explanation-breakdown">
-                    <strong style="color: #6e016b">TripAdvisor</strong>, focusing more on reviews, consistently shows the smallest revenue. 
+                    <strong style="color: #1f78b4">Family Travel</strong> focuses on comfort, activities, and spending more on 
+                    <strong style="color: #CC6677">accommodation</strong>, <strong style="color: #882255">entertainment</strong>, and 
+                    <strong style="color: #AA4499">dining</strong>.
+                </p>
+                <p class="explanation-breakdown">
+                    <strong style="color: #d95f02">Solo Travel</strong> allows flexibility, emphasizing 
+                    <strong style="color: #882255">entertainment</strong>, and budget-friendly 
+                    <strong style="color: #CC6677">accommodation</strong> and <strong style="color: #DDCC77">transportation</strong>.
+                </p>
+            </div>
+
+            <div class="subsection flex-column">
+                <h4>Accommodation Apps Revenue</h4>
+                <div id="vis5" class="chart"></div>
+
+                <p class="explanation-breakdown">
+                    <strong style="color: #9ebcda">Booking</strong> leads in revenue, especially in 2023, due to its global reach and seamless booking experience.
+                </p>
+                <p class="explanation-breakdown">
+                    <strong style="color: #6e016b">TripAdvisor</strong>, focusing more on reviews, consistently shows the smallest revenue.
                 </p>
                 <p class="explanation-breakdown">
                     While <strong style="color: #9ebcda">Booking</strong> excels in direct bookings, <strong style="color: #6e016b">TripAdvisor</strong> relies on referrals. 
                     Despite this, both apps provide easy access to accommodations, simplifying travel planning for users.
                 </p>
-              </div>
             </div>
+        </div>
+    </div>
 
     <!-- Vega-Lite Script for Visualization -->
     <script type="text/javascript">
@@ -141,4 +149,5 @@
         vegaEmbed('#vis5', vis5, { "actions": false }).then(function (result) {}).catch(console.error);
     </script>
 </body>
+
 </html>
