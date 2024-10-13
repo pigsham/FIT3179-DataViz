@@ -2,7 +2,7 @@ Flights,Airport_Name,Abbreviation
 39,Munich Airport,MUC
 17,London Heathrow Airport,LHR
 14,Dubai International Aiport,DXB
-13,Frankfurt am Main Airport,FRA
+13,Frankfurt Main Airport,FRA
 13,Amsterdam Airport Schipol,AMS
 12,John F Kennedy Internaational Airport,JFK
 11,Singapore Changi Airport,SIN
@@ -13,11 +13,11 @@ Flights,Airport_Name,Abbreviation
 7,Sheremetyevo International Airport,SVO
 6,Boston Logan International Airport,BOS
 6,Suvarnabhumi Airport,BKK
-6, Comodoro Arturo Merino Ben�tez International Airport,SCL
+6, Comodoro Arturo Merino Bentez International Airport,SCL
 6,Hartsfield Jackson Airport,ATL
 5,San Francisco International Airport,SFO
 5,Ngurah Rai International Airport,DPS
-4,Adolfo Su�rez Madrid�Barajas Airport,MAD
+4,Adolfo Suarez Madrid Barajas Airport,MAD
 4,Doha International Airport,DIA
 4,Miami International Airport,MIA
 4,Charles de Gaulle International Airport,CDG
@@ -31,11 +31,11 @@ Flights,Airport_Name,Abbreviation
 3,Kuala Lumpur International Airport,KUL
 3,Newcastle Airport,NCL
 3,OR Tambo International  Airport,JNB
-3,Presidente Carlos Ib��ez del Campo International Airport,PUQ
+3,Presidente Carlos del Campo International Airport,PUQ
 3,Pulkovo Airport,LED
 3,Salt Lake City International Airport,SLC
 3,London Stansted Airport,STN
-3,Leonardo da Vinci�Fiumicino Airport,FCO
+3,Leonardo da Vinci Fiumicino Airport,FCO
 3,Ronald Reagan Washington National Airport,DCA
 3,Ministro Pistarini International Airport,EZE
 3,Chicago O'Hare International Aiarport,ORD

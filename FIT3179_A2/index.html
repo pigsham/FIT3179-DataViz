@@ -129,8 +129,42 @@
                 </p>
             </div>
         </div>
-    </div>
 
+        <!-- Airports Section -->
+        <div class="subsection-title">
+            <h3>Airports' Flights</h3>
+            <div class="divider"></div>
+        </div>
+
+        <div class="subsection three-columns">
+            <div class="explanation-left">
+                <h4>General Overview</h4>
+                <p>
+                    The data reveals that <strong>Munich Airport (MUC)</strong> leads with <strong>39 flights</strong>, followed by <strong>London Heathrow (LHR)</strong> and <strong>Dubai International Airport (DXB)</strong>. 
+                    Major European hubs like <strong>Frankfurt Main (FRA)</strong> and <strong>Amsterdam Schipol (AMS)</strong> also handle significant flight traffic. 
+                    This indicates a concentration of flight activities at key global airports.
+                </p>
+            </div>
+        
+            <div class="radial-plot-container">
+                <div id="vis6" class="chart"></div>
+            </div>
+
+            <div class="explanation-right">
+                <h4>Regional Analysis</h4>
+                <p>
+                    The dataset covers airports from various continents. <strong>Singapore Changi (SIN)</strong> leads Southeast Asia with <strong>11 flights</strong>, while <strong>Hong Kong International (HKG)</strong> has <strong>7 flights</strong>.
+                    <strong>John F. Kennedy (JFK)</strong> and <strong>San Francisco (SFO)</strong> are major North American hubs. 
+                    In South America, <strong>Comodoro Arturo Merino Benítez (SCL)</strong> and <strong>Las Americas International (SDQ)</strong> show notable flight activity.
+                </p>
+            </div>
+        </div>
+
+        <div class="metadata">
+            <p><strong>Data Source:</strong> Flight data for various international airports. The data was cleaned and processed for this analysis.</p>
+            <p><strong>Tools Used:</strong> Visualizations created using <strong>Vega-Lite</strong> and styled with <strong>CSS</strong> for responsiveness.</p>
+            <p><strong>Purpose:</strong> This dashboard provides insights into global travel, highlighting key airport activity and flight patterns worldwide.</p>
+        </div>
     <!-- Vega-Lite Script for Visualization -->
     <script type="text/javascript">
         var vis1 = "js/6_choropleth_map_gdp.vg.json";
@@ -147,6 +181,9 @@
 
         var vis5 = "js/5_grouped_bar_chart.vg.json";
         vegaEmbed('#vis5', vis5, { "actions": false }).then(function (result) {}).catch(console.error);
+
+        var vis6 = "js/8_radial_plot.vg.json"
+        vegaEmbed('#vis6', vis6, { "actions": false }).then(function (result) {}).catch(console.error);
     </script>
 </body>
 

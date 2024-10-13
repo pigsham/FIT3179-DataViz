@@ -1,6 +1,6 @@
 :root {
     --chart-bg: #f1f0f3;
-    --chart-border: #040404;
+    --chart-border: #f1f0f3;
     --contrast-color: #264653;
     --link-color: #3498db;
     --page-color: #f1f0f3;
@@ -60,14 +60,14 @@ body {
 
 h1 {
     color: var(--contrast-color);
-    font-size: 2.5rem; /* Responsive font size */
+    font-size: 3rem; /* Responsive font size */
     font-weight: 700;
     margin-top: 2rem;
     text-align: center;
 }
 
 h2 {
-    font-size: 1.5rem; /* Responsive font size */
+    font-size: 1.25rem; /* Responsive font size */
     font-weight: 400;
     margin-bottom: 1.5rem;
 }
@@ -145,4 +145,52 @@ h4 {
     margin-top: -2rem;
     padding: 0 1.5rem;
     width: 100%;
+}
+
+.three-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px; /* Space between the columns */
+}
+
+.explanation-left {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+    background-color: var(--chart-bg);
+    border-radius: 8px;
+    border: 1px solid var(--chart-border);
+}
+
+.explanation-right {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+    background-color: var(--chart-bg);
+    border-radius: 8px;
+    border: 1px solid var(--chart-border);
+    padding-top: 50px;
+}
+
+.radial-plot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--chart-border);
+    width: 33%; /* Width of the radial plot container */
+}
+
+.metadata {
+    text-align: left;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    padding: 10px;
+    color: var(--text-color);
+    background-color: var(--page-color);
+    border: 1px solid var(--chart-border);
+    border-radius: 8px;
+    max-width: 400px;
+    margin-left: 0; /* Aligns the metadata to the bottom-left */
 }
