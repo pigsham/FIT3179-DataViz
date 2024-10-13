@@ -2,6 +2,15 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 95,
   "height": 348,
+  "params": [
+    {
+      "name": "highlight",
+      "select": {
+        "type": "point",
+        "on": "mouseover"
+      }
+    }
+  ],
   "data": {
     "values": [
       {"App": "Booking", "Year": 2019, "Revenue": 15},
@@ -56,6 +65,13 @@
       "field": "App",
       "type": "nominal",
       "spacing": 10
+    },
+    "opacity": {
+      "condition": {
+        "param": "highlight",
+        "value": 0.8
+      },
+      "value": 0.2
     },
     "tooltip": [
       {"field": "App", "type": "nominal", "title": "App"},
