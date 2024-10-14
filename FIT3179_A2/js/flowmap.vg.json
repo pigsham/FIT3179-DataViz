@@ -1,0 +1,74 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 500,
+    "data": {
+      "values": [
+        {"origin": "KUL", "destination": "JMK", "origin_lon": -73.7781, "origin_lat": 40.6413, "dest_lon": -0.4543, "dest_lat": 51.4700},
+        {"origin": "LHR", "destination": "DXB", "origin_lon": -0.4543, "origin_lat": 51.4700, "dest_lon": 55.3644, "dest_lat": 25.2528},
+        {"origin": "SIN", "destination": "SFO", "origin_lon": 103.994, "origin_lat": 1.3644, "dest_lon": -122.379, "dest_lat": 37.6213}
+      ]
+    },
+    "projection": {
+      "type": "mercator"
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "geoshape",
+          "fill": "#e0e0e0",
+          "stroke": "#bdbdbd"
+        },
+        "data": {
+          "url": "https://vega.github.io/vega-lite/data/world-110m.json",
+          "format": {
+            "type": "topojson",
+            "feature": "countries"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "rule",
+          "stroke": "blue",
+          "strokeWidth": 2
+        },
+        "encoding": {
+          "longitude": {
+            "field": "origin_lon",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "origin_lat",
+            "type": "quantitative"
+          },
+          "longitude2": {
+            "field": "dest_lon",
+            "type": "quantitative"
+          },
+          "latitude2": {
+            "field": "dest_lat",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": "point",
+        "encoding": {
+          "longitude": {"field": "origin_lon", "type": "quantitative"},
+          "latitude": {"field": "origin_lat", "type": "quantitative"},
+          "size": {"value": 100},
+          "color": {"value": "red"}
+        }
+      },
+      {
+        "mark": "point",
+        "encoding": {
+          "longitude": {"field": "dest_lon", "type": "quantitative"},
+          "latitude": {"field": "dest_lat", "type": "quantitative"},
+          "size": {"value": 100},
+          "color": {"value": "blue"}
+        }
+      }
+    ]
+  }
