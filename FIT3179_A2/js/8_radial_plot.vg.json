@@ -35,7 +35,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Ferry", "Bus", "Car rental", "Train", "Flight"],
-        "range": [ "#9ebcda", "#8c96c6", "#8c6bb1", "#88419d", "#6e016b"]
+        "range":["#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#0c2c84"]
       },
       "legend": null
     }
