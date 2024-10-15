@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Transportation Preferences",
   "width": 350,
   "height": 250,
   "data": {
@@ -19,7 +18,7 @@
       ]
     }
   },{
-    "mark": {"type": "text", "radiusOffset": 10},
+    "mark": {"type": "text", "radiusOffset": 22},
     "encoding": {
       "text": {"field": "Transportation Type", "type": "nominal"},
       "tooltip":[
@@ -35,7 +34,8 @@
       "field": "Transportation Type",
       "type": "nominal",
       "scale": {
-        "range": ["#fbb4b9","#f768a1","#c51b8a","#7a0177"]
+        "domain": ["Ferry", "Bus", "Car rental", "Train", "Flight"],
+        "range": [ "#9ebcda", "#8c96c6", "#8c6bb1", "#88419d", "#6e016b"]
       },
       "legend": null
     }

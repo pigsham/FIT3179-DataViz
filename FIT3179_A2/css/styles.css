@@ -157,20 +157,20 @@ h4 {
 .explanation-left {
     flex: 1;
     padding: 20px;
-    text-align: justify;
+    text-align: left;
     background-color: var(--chart-bg);
     border-radius: 8px;
     border: 1px solid var(--chart-border);
+    padding-top: 40px;
 }
 
 .explanation-right {
     flex: 1;
     padding: 20px;
-    text-align: justify;
+    text-align: left;
     background-color: var(--chart-bg);
     border-radius: 8px;
     border: 1px solid var(--chart-border);
-    padding-top: 50px;
 }
 
 .radial-plot-container {
