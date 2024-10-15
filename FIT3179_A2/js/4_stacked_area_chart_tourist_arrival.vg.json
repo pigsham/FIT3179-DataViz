@@ -65,7 +65,8 @@
               {
                 "field": "International tourist arrivals by region of origin",
                 "type": "quantitative",
-                "title": "Total Arrivals (Billions)"
+                "title": "Total Arrivals",
+                "format": ","
               }
             ],
             "opacity": {

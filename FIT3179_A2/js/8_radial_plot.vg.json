@@ -9,12 +9,26 @@
     "background": "transparent",
     "view": { "stroke": "transparent" }
   },
+  "transform": [
+    {
+      "window": [{"op": "sum", "field": "Count", "as": "Total"}],
+      "frame": [null, null]
+    },
+    {
+      "calculate": "datum.Count / datum.Total * 100",
+      "as": "Percentage"
+    },
+    {
+      "calculate": "round(datum.Percentage) + '%' ",
+      "as": "Percentage_with_sign"
+    }
+  ],
   "layer": [{
     "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"},
     "encoding": {
       "tooltip":[
-        {"field": "Transportation Type", "type": "nominal", "title": "Airport Name"},
-        {"field": "Count", "type": "quantitative", "title": "Number of Flights"}
+        {"field": "Transportation Type", "type": "nominal", "title": "Transportation Type"},
+        {"field": "Percentage_with_sign", "type": "nominal", "title": "Percentage"}
       ]
     }
   },{
@@ -22,8 +36,8 @@
     "encoding": {
       "text": {"field": "Transportation Type", "type": "nominal"},
       "tooltip":[
-        {"field": "Transportation Type", "type": "nominal", "title": "Airport Name"},
-        {"field": "Count", "type": "quantitative", "title": "Number of Flights"}
+        {"field": "Transportation Type", "type": "nominal", "title": "Transportation Type"},
+        {"field": "Percentage_with_sign", "type": "nominal", "title": "Percentage"}
       ]
     }
   }],
