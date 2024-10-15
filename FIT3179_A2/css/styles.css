@@ -161,7 +161,6 @@ h4 {
     background-color: var(--chart-bg);
     border-radius: 8px;
     border: 1px solid var(--chart-border);
-    padding-top: 40px;
 }
 
 .explanation-right {
@@ -171,6 +170,7 @@ h4 {
     background-color: var(--chart-bg);
     border-radius: 8px;
     border: 1px solid var(--chart-border);
+    padding-top: 0px;
 }
 
 .radial-plot-container {
