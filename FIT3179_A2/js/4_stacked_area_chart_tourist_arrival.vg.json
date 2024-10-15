@@ -9,7 +9,7 @@
   },
   "vconcat": [
     {
-      "width": 500,
+      "width": 600,
       "height": 250,
       "layer": [
         {
@@ -23,12 +23,6 @@
               }
             }
           ],
-          "transform": [
-            {
-              "calculate": "datum['International tourist arrivals by region of origin'] / 1e9",
-              "as": "Arrivals_in_Billions"
-            }
-          ],
           "encoding": {
             "x": {
               "field": "Year",
@@ -37,12 +31,12 @@
               "scale": { "domain": {"param": "brush"} }
             },
             "y": {
-              "field": "Arrivals_in_Billions",
+              "field": "International tourist arrivals by region of origin",
               "type": "quantitative",
               "axis": {
                 "title": "Total Arrivals",
                 "format": ".1f",
-                "labelExpr": "datum.value + 'B'"
+                "labelExpr": "datum.value / 1e9 + 'B'"
               }
             },
             "color": {
@@ -52,7 +46,7 @@
               },
               "title": "Region of Origin",
               "legend": {
-                "orient": "right",
+                "orient": "bottom",
                 "title": "Region of Origin"
               }
             },
@@ -69,10 +63,9 @@
                 "timeUnit": "year"
               },
               {
-                "field": "Arrivals_in_Billions",
+                "field": "International tourist arrivals by region of origin",
                 "type": "quantitative",
-                "title": "Total Arrivals (Billions)",
-                "format": ".2f"
+                "title": "Total Arrivals (Billions)"
               }
             ],
             "opacity": {
@@ -89,7 +82,8 @@
           "encoding": {
             "x": {
               "datum": { "year": 2020 },
-              "type": "temporal"
+              "type": "temporal",
+              "scale": { "domain": {"param": "brush"} }
             }
           }
         },
@@ -106,10 +100,11 @@
           "encoding": {
             "x": {
               "datum": { "year": 2020 },
-              "type": "temporal"
+              "type": "temporal",
+              "scale": { "domain": {"param": "brush"} }
             },
             "y": {
-              "datum": 1.8, 
+              "datum": 1800000000, 
               "type": "quantitative"
             },
             "text": { "value": "COVID-19 Pandemic" }
@@ -118,7 +113,7 @@
       ]
     },
     {
-      "width": 500,
+      "width": 600,
       "height": 50,
       "mark": "line",
       "params": [
@@ -138,7 +133,6 @@
           "timeUnit": "year",
           "field": "Year",
           "axis": {
-            "format": "%Y",
             "title": "Brush to Filter"
           }
         },
